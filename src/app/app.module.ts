@@ -7,6 +7,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ComplaintComponent } from './views/complaint/complaint.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],
