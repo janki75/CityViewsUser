@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ComplaintComponent } from './views/complaint/complaint.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from "@angular/common/http";
 
@@ -12,12 +15,15 @@ import { HttpClientModule } from "@angular/common/http";
   declarations: [
     AppComponent,
     HomepageComponent,
-    ComplaintComponent
+    ComplaintComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],
