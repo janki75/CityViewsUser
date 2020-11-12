@@ -4,7 +4,33 @@
   <meta charset="utf-8">
   <title>CityViewsUser</title>
   <base href="/">
-
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!-- //mobile apps -->
+  <!-- Custom Theme files -->
+  <link href="./assets/js/easing.js">
+  <link href="./assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+  <link href="./assets/css/style.css" type="text/css" rel="stylesheet" media="all"> 
+  <!-- //Custom Theme files -->
+  <!-- js -->
+  <script src="./assets/js/jquery-1.11.1.min.js"></script> 
+  <!-- //js -->
+  <!-- web-fonts -->
+  <link href='//fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <!-- //web-fonts -->
+  <!-- start-smooth-scrolling -->
+  <script type="text/javascript" src="./assets/js/move-top.js"></script>
+  <script type="text/javascript" src="./assets/js/easing.js"></script>
+  <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+          event.preventDefault();
+  
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+      });
+  </script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
