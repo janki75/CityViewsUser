@@ -1,4 +1,6 @@
+import { ComplaintService } from './../../services/complaint.service';
 import { Component, OnInit } from '@angular/core';
+import { complaint_Class } from 'src/app/classes/complaint';
 
 @Component({
   selector: 'app-complaint',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComplaintComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _compserv:ComplaintService) { }
+  arrcomplaint:complaint_Class[]=[];
   ngOnInit() {
+    this._compserv.getAllComplaints().subscribe(
+      (data:complaint_Class[])=>{
+        this.arrcomplaint=data;
+      }
+    );
   }
 
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ComplaintComponent } from './views/complaint/complaint.component';
 
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ComplaintComponent } from './views/complaint/complaint.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
     
   ],
   providers: [],
