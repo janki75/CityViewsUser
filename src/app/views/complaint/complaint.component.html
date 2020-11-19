@@ -1,16 +1,108 @@
-<div class="comment-grid-top">
-    <h3>Responses</h3>
-    <div class="comments-top-top">
-        <div class="top-comment-left">
+<app-header></app-header>
+
+<div class="blog single-page">
+		<div class="container">
+<div class="comment-grid-top"><br>
+  
+    <h3>Complaints</h3>
+
+<div style="float: right;margin-top: -80px;margin-right: 350px">
+  <a (click)="onclickmycomplaints()" style="cursor: pointer" class="more">My Complaints</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+        <a (click)="onadd()" style="cursor: pointer" class="more" data-toggle="modal" data-target="#myModal">Add Complaint</a>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Register Your Complaint!!</h4>
+              </div>
+              <div class="modal-body">
+                  <form #addComplaintForm="ngForm" class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Enter Complaint Description</mat-label>
+                        <input #desc="ngModel" type="text" [(ngModel)]="description" name="description" required id="description" matInput placeholder="Enter Description">
+                      
+                      </mat-form-field>
+                      <div [hidden]="desc.valid || desc.untouched">
+                          <div [hidden]="!desc.errors?.required"  class="text-danger">
+                                <font size=2>*please enter description</font>
+                              </div>
+                             </div>
+                    </form>
+              </div>
+              <div class="modal-footer">
+                  <p style="color: red; font-size: large; text-align: left;">{{ msg }}</p>
+                  <button style="cursor: pointer" [disabled] = "addComplaintForm.invalid" class="btn btn-default"  (click)="onsave()">Save</button>
+                <button (click)="onclose()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+           
+        </div>
+    <div *ngFor="let item of arrcomplaint" class="comments-top-top">
+        <div  class="top-comment-left">
             <a href="#"><img class="img-responsive" src="../../../assets/images/icon1.png" alt=""></a>
         </div>
-        <div *ngFor="let item of arrcomplaint" class="top-comment-right">
+        <div  class="top-comment-right">
             <ul>
                 <li><span class="left-at"><a href="#">Subject:-{{item.description}}</a></span></li>
                <br> <li><span class="right-at">Complaint Added At-{{item.date}}</span></li>
-                <li><a class="reply" href="#">{{item.name}}</a></li>
-                <!-- <li><a class="reply"><mat-icon>thumb_up</mat-icon>{{}}</a></li>
-                <li><a class="reply"><mat-icon>thumb_down</mat-icon>{{}}</a></li> -->
+                <br>
+              <li>  Complaint Status:
+                <label  *ngIf="item.status==0" style="cursor: pointer" style="color: tomato">PENDING</label>
+                <label  *ngIf="item.status==1" style="cursor: pointer" style="color: blue">IN-PROGRESS</label>
+                <label  *ngIf="item.status==2" style="cursor: pointer" style="color: green">RESOLVED</label>
+                <label  *ngIf="item.status==3" style="cursor: pointer" style="color: red">REJECTED</label>
+             
+              
+              </li><br>
+                <li><a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon></a>{{item.upVote}}</li>
+                <li><a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon></a>{{item.downVote}}</li><br>
+            <br>    <li>
+                 <button *ngIf="item.ownerId==ownerId"  class="btn waves-effect" type="button" style="margin-right: 10%;cursor: pointer;background-color: #1ABC9C;color:white" data-toggle="modal" data-target="#myModal1" (click)="onedit(item)">Edit Complaint</button>
+                </li>
+                  <!-- Modal -->
+        <div id="myModal1" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Register Your Complaint!!</h4>
+                </div>
+                <div class="modal-body">
+                    <form #editComplaintForm="ngForm" class="example-form">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Enter Complaint Description</mat-label>
+                          <input #desc="ngModel" type="text" [(ngModel)]="descri" name="description" required id="description" matInput placeholder="Enter Description">
+                        
+                        </mat-form-field>
+                        <div [hidden]="desc.valid || desc.untouched">
+                            <div [hidden]="!desc.errors?.required"  class="text-danger">
+                                  <font size=2>*please enter description</font>
+                                </div>
+                               </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <p style="color: red; font-size: large; text-align: left;">{{ msg1 }}</p>
+                    <button style="cursor: pointer" [disabled] = "editComplaintForm.invalid" class="btn btn-default"  (click)="onsavechanges()">Save changes</button>
+                  <button (click)="onclose()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+       
+               
             </ul>
         
         </div>
@@ -18,3 +110,6 @@
     </div>
     
 </div>
+</div>
+</div>
+<app-footer></app-footer>

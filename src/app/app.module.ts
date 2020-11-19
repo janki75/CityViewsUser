@@ -10,6 +10,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from "@angular/common/http";
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatIconModule,
+  MatFormFieldModule
+ 
+  } from "@angular/material";
+import { FormsModule } from '@angular/forms';
+import { EditComplaintComponent } from './view/edit-complaint/edit-complaint.component';
+import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +27,23 @@ import { HttpClientModule } from "@angular/common/http";
     HomepageComponent,
     ComplaintComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    EditComplaintComponent,
+    MycomplaintComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+  
+  MatIconModule,
+  
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

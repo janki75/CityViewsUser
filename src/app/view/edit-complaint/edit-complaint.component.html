@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="contact" id="contact">
+		<div class="container">
+			<div class="title">
+				<h3>Edit Complaint</h3>
+				<p style="color: red; font-size: large; text-align: center;">{{ msg }}</p>
+			</div>
+			<div class="contact-grids">
+				<div class="col-md-12 contact-form">
+					<form method="post">
+                    Enter Description
+                    <br>	<input style="margin-left: 20%" [(ngModel)]="description" required type="text" id="description" name="description" placeholder="description" required="">
+					<br>	<input (click)="onedit()" type="submit" value="SUBMIT">
+					</form>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+	</div>
+<app-footer></app-footer>
+
+
+
+
