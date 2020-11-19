@@ -3,8 +3,8 @@
 <div class="blog single-page">
 		<div class="container">
 <div class="comment-grid-top"><br>
-  
-    <h3>Your Complaints!!</h3>
+
+    <h3 style=" margin-top: -130px;">Your Complaints!!</h3>
 
 
     <div *ngFor="let item of arrcomplaint" class="comments-top-top">
@@ -21,23 +21,23 @@
                 <label  *ngIf="item.status==1" style="cursor: pointer" style="color: blue">IN-PROGRESS</label>
                 <label  *ngIf="item.status==2" style="cursor: pointer" style="color: green">RESOLVED</label>
                 <label  *ngIf="item.status==3" style="cursor: pointer" style="color: red">REJECTED</label>
-             
-              
+
+
               </li><br>
                 <li><a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon></a>{{item.upVote}}</li>
                 <li><a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon></a>{{item.downVote}}</li><br>
             <br>    <li>
-                
+
                 </li>
-          
-       
-               
+
+
+
             </ul>
-        
+
         </div>
         <div class="clearfix"> </div>
     </div>
-    
+
 </div>
 </div>
 </div>

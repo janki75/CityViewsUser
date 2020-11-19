@@ -26,7 +26,7 @@ msg:string="";
 
   //for edit
   editid:number;
-  
+
   msg1:string="";
   d1:string;
   upV:number;
@@ -36,10 +36,10 @@ msg:string="";
   descri:string;
 
   ngOnInit() {
-    
+
     this.date=new Date();
 this.getAllComplaint();
-   
+
   }
   getAllComplaint()
   {
@@ -47,11 +47,11 @@ this.getAllComplaint();
       (data:complaint_Class[])=>{
         this.arrcomplaint=data;
       }
-    ); 
+    );
   }
   onclickupvote(item:complaint_Class)
   {
-    
+
     this._compserv.updateUpvote(item).subscribe(
       (data:complaint_Class[])=>{
         this.ngOnInit();
@@ -63,13 +63,13 @@ this.getAllComplaint();
     this._compserv.updateDownVote(item).subscribe(
       (data:complaint_Class[])=>{
         this.ngOnInit();
-      
+
       }
-    ); 
+    );
   }
   onsave()
   {
-  
+
     let c;
     let d=this.date.getDate()+"/"+this.date.getMonth()+"/"+this.date.getFullYear();
     this.datestr=d.toString();
@@ -91,7 +91,7 @@ this.getAllComplaint();
       this.stat=data.status;
       this.ownId=data.ownerId;
     }
-  ); 
+  );
   }
   onclose()
   {

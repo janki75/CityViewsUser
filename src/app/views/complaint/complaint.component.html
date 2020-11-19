@@ -3,8 +3,8 @@
 <div class="blog single-page">
 		<div class="container">
 <div class="comment-grid-top"><br>
-  
-    <h3>Complaints</h3>
+
+    <h3 style=" margin-top: -130px;">Complaints</h3>
 
 <div style="float: right;margin-top: -80px;margin-right: 350px">
   <a (click)="onclickmycomplaints()" style="cursor: pointer" class="more">My Complaints</a>
@@ -14,7 +14,7 @@
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
-        
+
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
@@ -26,7 +26,7 @@
                       <mat-form-field class="example-full-width">
                         <mat-label>Enter Complaint Description</mat-label>
                         <input #desc="ngModel" type="text" [(ngModel)]="description" name="description" required id="description" matInput placeholder="Enter Description">
-                      
+
                       </mat-form-field>
                       <div [hidden]="desc.valid || desc.untouched">
                           <div [hidden]="!desc.errors?.required"  class="text-danger">
@@ -41,10 +41,10 @@
                 <button (click)="onclose()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
-        
+
           </div>
         </div>
-           
+
         </div>
     <div *ngFor="let item of arrcomplaint" class="comments-top-top">
         <div  class="top-comment-left">
@@ -60,8 +60,8 @@
                 <label  *ngIf="item.status==1" style="cursor: pointer" style="color: blue">IN-PROGRESS</label>
                 <label  *ngIf="item.status==2" style="cursor: pointer" style="color: green">RESOLVED</label>
                 <label  *ngIf="item.status==3" style="cursor: pointer" style="color: red">REJECTED</label>
-             
-              
+
+
               </li><br>
                 <li><a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon></a>{{item.upVote}}</li>
                 <li><a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon></a>{{item.downVote}}</li><br>
@@ -71,7 +71,7 @@
                   <!-- Modal -->
         <div id="myModal1" class="modal fade" role="dialog">
             <div class="modal-dialog">
-          
+
               <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-header">
@@ -83,7 +83,7 @@
                         <mat-form-field class="example-full-width">
                           <mat-label>Enter Complaint Description</mat-label>
                           <input #desc="ngModel" type="text" [(ngModel)]="descri" name="description" required id="description" matInput placeholder="Enter Description">
-                        
+
                         </mat-form-field>
                         <div [hidden]="desc.valid || desc.untouched">
                             <div [hidden]="!desc.errors?.required"  class="text-danger">
@@ -98,17 +98,17 @@
                   <button (click)="onclose()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
-          
+
             </div>
           </div>
-       
-               
+
+
             </ul>
-        
+
         </div>
         <div class="clearfix"> </div>
     </div>
-    
+
 </div>
 </div>
 </div>

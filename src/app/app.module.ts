@@ -16,7 +16,7 @@ import {
   MatInputModule,
   MatIconModule,
   MatFormFieldModule
- 
+
   } from "@angular/material";
 import { FormsModule } from '@angular/forms';
 import { EditComplaintComponent } from './view/edit-complaint/edit-complaint.component';
@@ -37,19 +37,16 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-    SliderModule
+    SliderModule,
 
-=======
     MatButtonModule,
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-  
+
   MatIconModule,
-  
- 
->>>>>>> 41cc115187d3e6167d25d55526ea29f350d86889
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
