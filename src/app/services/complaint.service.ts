@@ -7,9 +7,9 @@ import { Subject,observable } from "rxjs";
 })
 export class ComplaintService {
   complaint_url:string="http://localhost:8081/adminportal/complaints/";
-  
+
   constructor(private _http:HttpClient) { }
-  
+
   getAllComplaints()
   {
     return this._http.get(this.complaint_url);
@@ -45,5 +45,5 @@ return this._http.post(this.complaint_url,body,{headers:head1});
 
     return this._http.put(this.complaint_url+item.id,body,{headers:head1});
   }
-  
+
 }

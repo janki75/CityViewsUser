@@ -75,6 +75,7 @@ this.getAllComplaint();
     this.datestr=d.toString();
     this._compserv.addComplaint(new complaint_Class(this.id,this.datestr,this.description,this.upVote,this.downVote,this.status,this.ownerId)).subscribe(
       (data:complaint_Class)=>{
+        console.log(data);
          }
     );
     this.msg="complaint successfully updated!!";
