@@ -8,6 +8,7 @@ import { ComplaintComponent } from './views/complaint/complaint.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderModule } from 'angular-image-slider';
 
 import { HttpClientModule } from "@angular/common/http";
 
@@ -24,7 +25,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+    SliderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
