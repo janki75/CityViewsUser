@@ -78,7 +78,7 @@ this.getAllComplaint();
         console.log(data);
          }
     );
-    this.msg="complaint successfully updated!!";
+    this.msg="complaint successfully added!!";
   }
   onedit(item)
   {

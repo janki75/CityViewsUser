@@ -14,7 +14,7 @@ arr:meeting_class[]=[];
 ownerarr:owner_class[]=[];
 msg:string;
 i:number;
-count:number;
+count:number=0;
   constructor(private meetingser:MeetingService,private ownerser:OwnerService) { }
 public imagesUrl;
   ngOnInit() {
@@ -47,17 +47,17 @@ public imagesUrl;
          //ownerdetails
 
          this.ownerser.getallowner().subscribe(
-           (data:any)=>{
+           (data:owner_class[])=>{
               console.log(data);
             for(this.i=0;this.i<data.length;this.i++)
             {
-              if(data[this.i].active==true)
+
+              if(data[this.i].active)
               {
                 this.count++;
               }
 
             }
-            console.log(this.count);
 
 
            }
