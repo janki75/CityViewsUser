@@ -77,7 +77,7 @@ this.getAllComplaint();
       (data:complaint_Class)=>{
          }
     );
-    this.msg="complaint successfully updated!!";
+    this.msg="complaint successfully added!!";
   }
   onedit(item)
   {
