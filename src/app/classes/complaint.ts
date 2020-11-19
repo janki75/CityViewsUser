@@ -4,7 +4,7 @@ export class complaint_Class
 {
     constructor(
         public id:number,
-        public date:Date,
+        public date:string,
         public description:string,
         public upVote:number,
         public downVote:number,

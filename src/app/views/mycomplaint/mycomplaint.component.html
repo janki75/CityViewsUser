@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="blog single-page">
+		<div class="container">
+<div class="comment-grid-top"><br>
+  
+    <h3>Your Complaints!!</h3>
+
+
+    <div *ngFor="let item of arrcomplaint" class="comments-top-top">
+        <div  class="top-comment-left">
+            <a href="#"><img class="img-responsive" src="../../../assets/images/icon1.png" alt=""></a>
+        </div>
+        <div  class="top-comment-right">
+            <ul>
+                <li><span class="left-at"><a href="#">Subject:-{{item.description}}</a></span></li>
+               <br> <li><span class="right-at">Complaint Added At-{{item.date}}</span></li>
+                <br>
+              <li>  Complaint Status:
+                <label  *ngIf="item.status==0" style="cursor: pointer" style="color: tomato">PENDING</label>
+                <label  *ngIf="item.status==1" style="cursor: pointer" style="color: blue">IN-PROGRESS</label>
+                <label  *ngIf="item.status==2" style="cursor: pointer" style="color: green">RESOLVED</label>
+                <label  *ngIf="item.status==3" style="cursor: pointer" style="color: red">REJECTED</label>
+             
+              
+              </li><br>
+                <li><a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon></a>{{item.upVote}}</li>
+                <li><a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon></a>{{item.downVote}}</li><br>
+            <br>    <li>
+                
+                </li>
+          
+       
+               
+            </ul>
+        
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    
+</div>
+</div>
+</div>
+<app-footer></app-footer>
