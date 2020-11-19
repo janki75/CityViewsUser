@@ -63,8 +63,31 @@
 
 
               </li><br>
-                <li><a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon></a>{{item.upVote}}</li>
-                <li><a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon></a>{{item.downVote}}</li><br>
+                <li *ngIf="item.status==0 || item.status==1">               
+                    <a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon>
+                    </a>
+                    {{item.upVote}}
+                  </li>
+                  <li *ngIf="item.status==2 || item.status==3">                 
+                     <a class="reply"><mat-icon style="cursor: pointer"  (click)="ondisableclick()">thumb_up</mat-icon>
+                     </a>
+                     {{item.upVote}}
+                    </li>
+                  
+
+                <li *ngIf="item.status==0 || item.status==1">
+                  <a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon>
+                  </a>{{item.downVote}}
+                </li>
+
+                
+                    <li  *ngIf="item.status==2 || item.status==3">
+                      <a class="reply"><mat-icon style="cursor: pointer" (click)="ondisabledownvote()">thumb_down</mat-icon>
+                      </a>{{item.downVote}}
+                    </li><br>
+
+
+
             <br>    <li>
                  <button *ngIf="item.ownerId==ownerId"  class="btn waves-effect" type="button" style="margin-right: 10%;cursor: pointer;background-color: #1ABC9C;color:white" data-toggle="modal" data-target="#myModal1" (click)="onedit(item)">Edit Complaint</button>
                 </li>

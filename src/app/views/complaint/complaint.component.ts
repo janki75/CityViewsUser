@@ -35,6 +35,8 @@ msg:string="";
  ownId:number=1; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
   descri:string;
 
+
+  errmsg:string="";
   ngOnInit() {
 
     this.date=new Date();
@@ -114,5 +116,14 @@ this.getAllComplaint();
   onclickmycomplaints()
   {
     this.route.navigate(['/mycomplaint']);
+  }
+  ondisableclick()
+  {
+    alert("You can't upvote to a complaint which is resolved or rejected!!");
+    
+  }
+  ondisabledownvote()
+  {
+    alert("You can't downvote to a complaint which is resolved or rejected!!");
   }
 }
