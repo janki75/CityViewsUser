@@ -21,6 +21,10 @@ import {
 import { FormsModule } from '@angular/forms';
 import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
+import { LoginComponent } from './views/login/login.component';
+import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
+import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
     HeaderComponent,
     FooterComponent,
     EditComplaintComponent,
-    MycomplaintComponent
+    MycomplaintComponent,
+    LoginComponent,
+    ForgetpasswordComponent,
+    ChangepasswordComponent,
+
   ],
   imports: [
     BrowserModule,
