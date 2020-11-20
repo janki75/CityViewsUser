@@ -3,6 +3,9 @@ import { meeting_class } from '../classes/meeting';
 import { MeetingService } from '../services/meeting.service';
 import { OwnerService } from '../services/owner.service';
 import { owner_class } from '../classes/owner';
+import { expense_class } from '../classes/expense';
+import { ExpenseService } from '../services/expense.service';
+import { IncomeService } from '../services/income.service';
 
 @Component({
   selector: 'app-homepage',
@@ -12,10 +15,14 @@ import { owner_class } from '../classes/owner';
 export class HomepageComponent implements OnInit {
 arr:meeting_class[]=[];
 ownerarr:owner_class[]=[];
+expensearr:expense_class[]=[];
 msg:string;
 i:number;
 count:number=0;
-  constructor(private meetingser:MeetingService,private ownerser:OwnerService) { }
+sum:number=0;
+incomesum:number=0;
+newdt:string[]=[];
+  constructor(private meetingser:MeetingService,private ownerser:OwnerService,private expenseser:ExpenseService,private incomeser:IncomeService) { }
 public imagesUrl;
   ngOnInit() {
     this.imagesUrl = [
@@ -62,6 +69,42 @@ public imagesUrl;
 
            }
          );
+
+         //expense
+         this.expenseser.getallexpense().subscribe(
+           (data:any)=>{
+            var todaydt=new Date().toString();
+            console.log(todaydt.substring(11,15));
+
+            for(this.i=0;this.i<data.length;this.i++)
+            {
+               console.log(data[this.i].date.toString().substring(6,10));
+               if(todaydt.substring(11,15)==data[this.i].date.toString().substring(6,10))
+                     this.sum+=data[this.i].amount;
+            }
+            console.log(this.sum);
+
+           }
+         );
+         //income
+
+         this.incomeser.getallincome().subscribe(
+           (data:any)=>{
+            var todaydt=new Date().toString();
+            console.log(todaydt.substring(11,15));
+
+            for(this.i=0;this.i<data.length;this.i++)
+            {
+               console.log(data[this.i].date.toString().substring(6,10));
+               if(todaydt.substring(11,15)==data[this.i].date.toString().substring(6,10))
+                     this.incomesum+=data[this.i].amount;
+            }
+            console.log(this.incomesum);
+
+           }
+         );
+
+
   }
 
 }

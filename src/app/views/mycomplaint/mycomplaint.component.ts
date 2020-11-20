@@ -9,7 +9,7 @@ import { complaint_Class } from 'src/app/classes/complaint';
 })
 export class MycomplaintComponent implements OnInit {
 i:number=0;
-ownerId:number=1;  //localStorage.getItem('ownerId');   //change this after login is added
+ownerId:number=6;  //localStorage.getItem('ownerId');   //change this after login is added
   constructor(private _compserv:ComplaintService) { }
 arrcomplaint:complaint_Class[]=[];
   ngOnInit() {
@@ -20,7 +20,7 @@ arrcomplaint:complaint_Class[]=[];
          if(data[this.i].status==1 && data[this.i].ownerId==this.ownerId)
          {
           this.arrcomplaint.push(data[this.i]);
-         } 
+         }
         }
       }
     );
