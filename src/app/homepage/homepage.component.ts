@@ -6,6 +6,7 @@ import { owner_class } from '../classes/owner';
 import { expense_class } from '../classes/expense';
 import { ExpenseService } from '../services/expense.service';
 import { IncomeService } from '../services/income.service';
+import { FlatService } from '../services/flat.service';
 
 @Component({
   selector: 'app-homepage',
@@ -22,7 +23,8 @@ count:number=0;
 sum:number=0;
 incomesum:number=0;
 newdt:string[]=[];
-  constructor(private meetingser:MeetingService,private ownerser:OwnerService,private expenseser:ExpenseService,private incomeser:IncomeService) { }
+flatcount:number=0;
+  constructor(private flatser:FlatService,private meetingser:MeetingService,private ownerser:OwnerService,private expenseser:ExpenseService,private incomeser:IncomeService) { }
 public imagesUrl;
   ngOnInit() {
     this.imagesUrl = [
@@ -59,7 +61,7 @@ public imagesUrl;
             for(this.i=0;this.i<data.length;this.i++)
             {
 
-              if(data[this.i].active)
+              if(data[this.i].active && data[this.i].name!="admin")
               {
                 this.count++;
               }
@@ -101,6 +103,18 @@ public imagesUrl;
             }
             console.log(this.incomesum);
 
+           }
+         );
+
+         //vacantflat
+
+         this.flatser.getallvacantflats().subscribe(
+           (data:any)=>{
+             for(this.i=0;this.i<data.length;this.i++)
+             {
+               this.flatcount++;
+             }
+             console.log(this.flatcount);
            }
          );
 
