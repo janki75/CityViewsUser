@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './views/homepage/homepage.component';
 import { ComplaintComponent } from './views/complaint/complaint.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,7 +19,7 @@ import {
 
   } from "@angular/material";
 import { FormsModule } from '@angular/forms';
-import { EditComplaintComponent } from './view/edit-complaint/edit-complaint.component';
+import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
 
 @NgModule({

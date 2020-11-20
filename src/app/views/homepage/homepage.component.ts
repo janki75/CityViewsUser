@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { meeting_class } from '../classes/meeting';
-import { MeetingService } from '../services/meeting.service';
-import { OwnerService } from '../services/owner.service';
-import { owner_class } from '../classes/owner';
-import { expense_class } from '../classes/expense';
-import { ExpenseService } from '../services/expense.service';
-import { IncomeService } from '../services/income.service';
-import { FlatService } from '../services/flat.service';
+import { meeting_class } from '../../classes/meeting';
+import { MeetingService } from '../../services/meeting.service';
+import { OwnerService } from '../../services/owner.service';
+import { owner_class } from '../../classes/owner';
+import { expense_class } from '../../classes/expense';
+import { ExpenseService } from '../../services/expense.service';
+import { IncomeService } from '../../services/income.service';
+
+import { FlatService } from '../../services/flat.service';
 
 @Component({
   selector: 'app-homepage',
