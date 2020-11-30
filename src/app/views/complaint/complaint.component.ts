@@ -20,7 +20,7 @@ msg:string="";
    upVote:number=0;
    downVote:number=0;
    status:number=0;
- ownerId:number=6; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+ ownerId:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
   description:string;
   datestr:string;
 
@@ -32,7 +32,7 @@ msg:string="";
   upV:number;
    downv:number;
    stat:number;
- ownId:number=1; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+ ownId:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
   descri:string;
 
 
@@ -121,7 +121,7 @@ this.getAllComplaint();
   ondisableclick()
   {
     alert("You can't upvote to a complaint which is resolved or rejected!!");
-    
+
   }
   ondisabledownvote()
   {
