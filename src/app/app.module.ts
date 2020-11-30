@@ -15,12 +15,15 @@ import {
   MatButtonModule,
   MatInputModule,
   MatIconModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+ MatSelectModule,
+
 
   } from "@angular/material";
 import { FormsModule } from '@angular/forms';
 import { EditComplaintComponent } from './view/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
+import { ElectionComponent } from './views/election/election.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
     HeaderComponent,
     FooterComponent,
     EditComplaintComponent,
-    MycomplaintComponent
+    MycomplaintComponent,
+    ElectionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
     HttpClientModule,
     BrowserAnimationsModule,
     SliderModule,
-
+    MatSelectModule,
     MatButtonModule,
     FormsModule,
     MatInputModule,
