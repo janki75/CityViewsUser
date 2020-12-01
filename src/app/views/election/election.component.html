@@ -1,0 +1,130 @@
+<app-header></app-header>
+<div class="title">
+		<h3> Elections </h3>
+	</div>
+<div class="slid about-w3ls-slid">
+        <div class="container">
+
+          <h3><marquee>Voting Lines of Election {{year}} will be closed Soon..Hurry Up!!</marquee> </h3>
+        </div>
+      </div>
+<!-- //slid -->
+	<!-- latest -->
+	<div class="latest">
+			<div class="abc" style="background-color: black">
+		<div class="container">
+			 
+			<div class="w3ls-row">
+					<div *ngIf="msg1" class="col-sm-4 col-md-4  w3latest-grids">
+							<img style="margin-left: 20%;border-radius: 20%;height:50%;width: 50%" src="../../../assets//images/ele1.png" class="img-responsive" alt=""/> 
+							<div class="w3latest-grids-text">
+								<h4>{{msg1}}</h4>
+							
+							<span style="color:white" >		Election End On</span><p>{{item.endDate}}</p>
+							
+							
+							</div>
+					</div>
+		
+			
+				<div *ngFor="let item of arrelection" class="col-sm-4 col-md-4  w3latest-grids">
+					<img style="margin-left: 20%;border-radius: 20%;height:50%;width: 50%" src="../../../assets//images/ele1.png" class="img-responsive" alt=""/> 
+					<div class="w3latest-grids-text">
+						<h4>{{item.election_name}}</h4>
+					<span style="color:white" >	Start Date of election</span><p>{{item.date}}</p>
+					<span style="color:white" >		Election End On</span><p>{{item.endDate}}</p>
+					<button *ngIf="item.resultflag==false" (click)="onclick(item.election_id)" data-toggle="modal" data-target="#myModal" class="button button1">Apply For position</button>
+					<button (click)="onclickresult(item.election_id)"  class="button button1" data-toggle="modal" data-target="#myModal1" *ngIf="item.resultflag==true" >Show Result</button>		
+						<!-- <a *ngIf="item.resultflag==false" (click)="onclick(item.election_id)" style="margin-top:-20%;margin-left: -15%" data-toggle="modal" data-target="#myModal" class="more">Apply For Position</a>
+						<a *ngIf="item.resultflag==true" style="margin-top:-20%;margin-left: -15%"  class="more">Show Result</a> -->
+							   <!-- Modal -->
+								 <div id="myModal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+				
+										<!-- Modal content-->
+										<div class="modal-content">
+											<div class="modal-header">
+
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												 <h4 class="modal-title">Apply for position!!</h4>
+											</div>
+											<div class="modal-body">
+													<form #addForm="ngForm" class="example-form">
+														<div style="float: left">
+															<h5 >Choose Position</h5>
+														</div>
+														<div  class="select">
+															<select [(ngModel)]="position_id" name="position_id" required name="slct" id="slct">
+																<option *ngFor="let item of arrelectionpos" [value]="item.id">
+																	{{item.name}}
+																</option>
+															</select>
+														</div>
+														</form>
+											</div>
+											<div class="modal-footer">
+													<p style="color: red; font-size: large; text-align: left;">{{ msg }}</p>
+													<button [disabled] = "addForm.invalid" (click)="onsave()" style="cursor: pointer" class="btn btn-default"  >Save</button>
+												<button (click)="onclose()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+				
+									</div>
+								</div>
+
+								<!-- second modal -->
+								   <!-- Modal -->
+								   <div id="myModal1" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+				
+										<!-- Modal content-->
+										<div class="modal-content">
+											<div class="modal-header">
+
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												 <h4 class="modal-title">Election Result!!</h4>
+											</div>
+											<div class="modal-body">
+													<table id="customers">
+															<tr>
+																	<th>Position Name</th>
+																	<th>Owner Name</th>
+																	<th>Count</th>
+																  </tr>
+																  <tr *ngFor="let item of arrwinner">
+																	<td>{{item.posName}}</td>
+																	
+																	<td>{{item.ownerName}}</td>
+																	<td>{{item.vote}}</td>
+																  </tr>
+														  
+														  
+														  </table>
+											</div>
+											<div class="modal-footer">
+	
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+				
+									</div>
+								</div>
+								<!-- second modal end -->
+				
+					
+					
+					</div>
+
+				</div>
+				</div>
+				
+			
+				<div class="clearfix"> </div>
+			
+			</div>
+		</div>
+	</div>
+
+
+	
+	<app-footer></app-footer>

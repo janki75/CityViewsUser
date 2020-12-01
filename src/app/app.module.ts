@@ -15,12 +15,15 @@ import {
   MatButtonModule,
   MatInputModule,
   MatIconModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+ MatSelectModule,
+
 
   } from "@angular/material";
 import { FormsModule } from '@angular/forms';
 import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
+import { ElectionComponent } from './views/election/election.component';
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
@@ -35,6 +38,7 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
     FooterComponent,
     EditComplaintComponent,
     MycomplaintComponent,
+    ElectionComponent,
     LoginComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
@@ -46,7 +50,7 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
     HttpClientModule,
     BrowserAnimationsModule,
     SliderModule,
-
+    MatSelectModule,
     MatButtonModule,
     FormsModule,
     MatInputModule,
