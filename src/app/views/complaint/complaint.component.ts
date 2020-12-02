@@ -73,7 +73,7 @@ this.getAllComplaint();
   {
 
     let c;
-    let d=this.date.getDate()+"/"+this.date.getMonth()+"/"+this.date.getFullYear();
+    let d=this.date.getDate()+"/"+((this.date.getMonth())+1)+"/"+this.date.getFullYear();
     this.datestr=d.toString();
     this._compserv.addComplaint(new complaint_Class(this.id,this.datestr,this.description,this.upVote,this.downVote,this.status,this.ownerId)).subscribe(
       (data:complaint_Class)=>{

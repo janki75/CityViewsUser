@@ -27,6 +27,8 @@ import { ElectionComponent } from './views/election/election.component';
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
+import { MyflatComponent } from './views/myflat/myflat.component';
+import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
     LoginComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
+    MyflatComponent,
+    FlatdetailComponent,
 
   ],
   imports: [
