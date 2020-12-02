@@ -5,6 +5,7 @@ import { ComplaintComponent } from './views/complaint/complaint.component';
 import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
 import { ElectionComponent } from './views/election/election.component';
+import { VotingComponent } from './views/voting/voting.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path:'elections',component:ElectionComponent
+  },
+  {
+    path:'voting',component:VotingComponent
   }
 ];
 

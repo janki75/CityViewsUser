@@ -27,7 +27,9 @@ import { ElectionComponent } from './views/election/election.component';
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
-
+import { VotingComponent } from './views/voting/voting.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
     LoginComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
+    VotingComponent,
 
   ],
   imports: [
@@ -55,8 +58,10 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-
-  MatIconModule,
+    MatExpansionModule,
+    MatDatepickerModule, 
+    MatNativeDateModule,
+  MatIconModule
 
 
   ],
