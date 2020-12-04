@@ -7,27 +7,34 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
 import { ElectionComponent } from './views/election/election.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import { LoginComponent } from './views/login/login.component';
+import { UserAuthService } from './services/user-auth.service';
 
 const routes: Routes = [
   {
-    path:'',component:HomepageComponent
-  },
-  {path:'complaint',component:ComplaintComponent},
-  {
-    path:'editcomplaint/:id',component:EditComplaintComponent
+    path:'',component:LoginComponent  
   },
   {
-    path:'mycomplaint',component:MycomplaintComponent
+    path:'home',
+    component:HomepageComponent,
+    canActivate:[UserAuthService]
+  },
+  {path:'complaint',component:ComplaintComponent,canActivate:[UserAuthService]},
+  {
+    path:'editcomplaint/:id',component:EditComplaintComponent,canActivate:[UserAuthService]
   },
   {
-    path:'elections',component:ElectionComponent
+    path:'mycomplaint',component:MycomplaintComponent,canActivate:[UserAuthService]
   },
   {
-    path:'myflat',component:MyflatComponent
+    path:'elections',component:ElectionComponent,canActivate:[UserAuthService]
+  },
+  {
+    path:'myflat',component:MyflatComponent,canActivate:[UserAuthService]
   },
   {
     path:'flatdetail/:id',
-    component:FlatdetailComponent
+    component:FlatdetailComponent,canActivate:[UserAuthService]
   }
 ];
 
