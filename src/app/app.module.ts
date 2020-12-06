@@ -24,6 +24,8 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
+import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
+import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
     LoginComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
+    ViewprofileComponent,
+    ManageprofileComponent,
 
   ],
   imports: [

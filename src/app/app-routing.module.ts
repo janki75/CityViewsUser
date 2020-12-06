@@ -7,20 +7,31 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
+import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
+import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
 
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'forget',component:ForgetpasswordComponent},
-  {path:'changepwd',component:ChangepasswordComponent},
+  
   {path:'complaint',component:ComplaintComponent},
   {
     path:'editcomplaint/:id',component:EditComplaintComponent
   },
   {
     path:'mycomplaint',component:MycomplaintComponent
-  }
+  },
+  {
+    path:'viewprofile/:email',component:ViewprofileComponent
+  },
+  {
+    path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
+  },
+  {
+    path:'viewprofile/changepassword/:id',component:ChangepasswordComponent
+  },
 ];
 
 @NgModule({
