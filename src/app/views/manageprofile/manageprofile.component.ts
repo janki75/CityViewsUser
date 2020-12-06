@@ -78,7 +78,7 @@ export class ManageprofileComponent implements OnInit {
         }
       );
       alert("Profile updated successfully!");
-      this._route.navigate(['/viewprofile',this.email]);
+      this._route.navigate(['/viewprofile']);
     }
     else{
       this.emailreserved="Email already registered: Please select some other email";
@@ -89,7 +89,7 @@ export class ManageprofileComponent implements OnInit {
 
 
     goBack() {
-      this._route.navigate(["/viewprofile",this.email]);
+      this._route.navigate(["/viewprofile"]);
     }
   
 }

@@ -22,10 +22,10 @@ export class ViewprofileComponent implements OnInit {
   constructor(private _route:Router, private _ownservice:OwnerService, private _acroute:ActivatedRoute) { }
 
   ngOnInit() {
-    //this.email=localStorage.getItem('email');
-    this._acroute.params.subscribe(
-      (x:Params)=>{
-        this.email=x['email'];
+    this.email=localStorage.getItem('ownerId');
+    // this._acroute.params.subscribe(
+    //   (x:Params)=>{
+    //     this.email=x['email'];
         this._ownservice.getownerByemail(this.email).subscribe(
           (data:any)=>{
             console.log(data);
@@ -39,8 +39,8 @@ export class ViewprofileComponent implements OnInit {
             this.password=data.password;
           }
         )
-      }
-    )
+    //   }
+    // )
     
   }
 

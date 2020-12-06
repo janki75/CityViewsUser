@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../assets/css/login.css">
 </head>
+
 <body>
   <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
     <div class="container">
@@ -24,16 +25,35 @@
                 <h1 style="color:#f4770d;font-family: serif;font-size: 35px"><b>CityViews</b></h1>
               </div>
               <p class="login-card-description">Sign into your account</p>
-              <form action="#!">
+              <form #addForm="ngForm" method="POST">
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address">
+                    <input required #em="ngModel" [(ngModel)]="email" email type="email" name="email" id="email" class="form-control" placeholder="Email address">
+                    <div [hidden]="em.valid || em.untouched">
+                      <div [hidden]="!em.errors?.required"  class="text-danger">
+                            <font size=2>*please enter Email</font>
+                          </div>
+                          <div [hidden]="!em.errors?.email"  class="text-danger">
+                              <font size=2>*please enter valid Email</font>
+                            </div>
+                         </div>
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="***********">
+                     
+                    <input minlength="8" #pass="ngModel" required [(ngModel)]="password"  [type]="hide ? 'password' : 'text'" name="password" id="password" class="form-control" placeholder="***********">
+                    <mat-icon style="color: black" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <div [hidden]="pass.valid || pass.untouched">
+                      <div [hidden]="!pass.errors?.required"  class="text-danger">
+                            <font size=2>*please enter Password</font>
+                          </div>
+
+                          <div [hidden]="!pass.errors?.minlength"  class="text-danger">
+                              <font size=2>* password must be of 8 characters</font>
+                            </div>
+                         </div>
                   </div>
-                  <input (click)="onlogin()" name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">
+                  <input [disabled] = "addForm.invalid" (click)="onlogin()" name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">
                 </form>
                 <a (click)="onforget()" style="cursor: pointer;" class="forgot-password-link">Forgot password?</a>
 

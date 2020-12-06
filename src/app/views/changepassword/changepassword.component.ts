@@ -50,13 +50,19 @@ export class ChangepasswordComponent implements OnInit {
 
       if(this.oldpassword==this.password){
         if(this.newpassword==this.renewpassword){
-          this._ownservice.updateownerdetails(new owner_class(this.ownerId,this.name,this.contactNo,this.email,this.dateOfPurchase,this.active,this.newpassword)).subscribe(
-            (data:any)=>{
-              console.log(data)
-            }
-          );
-          alert("Password updated successfully! You'll be redirected to login page!");
-          this._route.navigate(['/viewprofile',this.email]);
+          if(this.oldpassword!=this.newpassword){
+            this._ownservice.updateownerdetails(new owner_class(this.ownerId,this.name,this.contactNo,this.email,this.dateOfPurchase,this.active,this.newpassword)).subscribe(
+              (data:any)=>{
+                console.log(data)
+              }
+            );
+            alert("Password updated successfully! You'll be redirected to login page!");
+            this._route.navigate(['']);
+          }
+          else{
+            alert("Old Password and New Password can not be same")
+          }
+
         }
         else{
           alert("New Password and Confirm New Password are not the same")
@@ -72,6 +78,6 @@ export class ChangepasswordComponent implements OnInit {
 
     goBack() {
       console.log(this.email);
-      this._route.navigate(["/viewprofile",this.email]);
+      this._route.navigate(["/viewprofile"]);
     }
 }

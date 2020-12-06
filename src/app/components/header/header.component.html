@@ -47,43 +47,44 @@
 								</a>
 							</li>
 							<li>
-								<a href="about.html" onclick="$('#section-2').animatescroll();">
-									<span class="icon">
-										<i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
-									</span>
-									<span>About</span>
-								</a>
-							</li> 
-							<li>
 								<a routerLink="/complaint" onclick="$('#section-3').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
 									</span>
 									<span>Complaint</span>
 								</a>
-							</li>
+							</li> 
 							<li>
-								<a href="gallery.html" onclick="$('#section-4').animatescroll();">
+								<a routerLink="/elections" onclick="$('#section-2').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
+									</span>
+									<span>Elections</span>
+								</a>
+							</li>
+							
+							<li>
+								<a routerLink="/myflat" onclick="$('#section-4').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
 									</span>
-									<span>Gallery</span>
+									<span>My flat</span>
 								</a>
 							</li>
 							<li>
-								<a href="codes.html" onclick="$('#section-5').animatescroll();">
+								<a routerLink="/viewprofile" onclick="$('#section-5').animatescroll();">
 									<span class="icon">
-										<i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
+										<i aria-hidden="true" class="icon-user glyphicon glyphicon-user"></i>
 									</span>
-									<span>Short Codes</span>
+									<span>My Profile</span>
 								</a>
 							</li>
 							<li>
-								<a href="" onclick="$('#section-6').animatescroll();">
+								<a (click)="onlogout()" onclick="$('#section-6').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
                   </span>
-                  <span>More</span>
+                  <span>Logout</span>
 
 
                 </a>

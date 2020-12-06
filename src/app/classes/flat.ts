@@ -8,7 +8,8 @@ export class flat_class
         public occupied:boolean,
         public bhk:number,
         public parkingSlot:string,
-        public ownerId:number
+        public ownerId:number,
+        public ownerName?:string
 
 ){}
 }

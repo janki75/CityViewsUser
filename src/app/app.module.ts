@@ -15,17 +15,22 @@ import {
   MatButtonModule,
   MatInputModule,
   MatIconModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+ MatSelectModule,
+
 
   } from "@angular/material";
 import { FormsModule } from '@angular/forms';
 import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
+import { ElectionComponent } from './views/election/election.component';
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
 import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
 import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
+import { MyflatComponent } from './views/myflat/myflat.component';
+import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 
 
 @NgModule({
@@ -37,11 +42,14 @@ import { ManageprofileComponent } from './views/manageprofile/manageprofile.comp
     FooterComponent,
     EditComplaintComponent,
     MycomplaintComponent,
+    ElectionComponent,
     LoginComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
     ViewprofileComponent,
     ManageprofileComponent,
+    MyflatComponent,
+    FlatdetailComponent,
 
   ],
   imports: [
@@ -50,7 +58,7 @@ import { ManageprofileComponent } from './views/manageprofile/manageprofile.comp
     HttpClientModule,
     BrowserAnimationsModule,
     SliderModule,
-
+    MatSelectModule,
     MatButtonModule,
     FormsModule,
     MatInputModule,
