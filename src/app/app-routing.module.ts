@@ -7,22 +7,19 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
 import { ElectionComponent } from './views/election/election.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
-<<<<<<< HEAD
 import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
 import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
 import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
-=======
 import { LoginComponent } from './views/login/login.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
 import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
 import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
 import { UserAuthService } from './services/user-auth.service';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
->>>>>>> bc4571a038300ced23defd7f0cbef0cb0d5b9bc3
 
 const routes: Routes = [
   {
-    path:'',component:LoginComponent  
+    path:'',component:LoginComponent
   },
   {
     path:'home',
@@ -56,20 +53,18 @@ const routes: Routes = [
   },
   {
     path:'flatdetail/:id',
-<<<<<<< HEAD
     component:FlatdetailComponent
   },
   {path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent},
   {path:'showmaintenance/:id',component:ShowmaintenancedetailComponent},
-  {path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent}
-=======
+  {path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent},
+  {
     component:FlatdetailComponent,canActivate:[UserAuthService]
   },
   {
     path:'forgetpassword',
     component:ForgetpasswordComponent
   }
->>>>>>> bc4571a038300ced23defd7f0cbef0cb0d5b9bc3
 ];
 
 @NgModule({
