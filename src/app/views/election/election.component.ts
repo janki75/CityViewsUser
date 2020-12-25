@@ -66,7 +66,11 @@ export class ElectionComponent implements OnInit {
           let eDate = data[this.i].endDate.substring(0,2);
           let eMonth =data[this.i].endDate.substring(3,5);
           let eYear = data[this.i].endDate.substring(6,10);
-            if(eYear==this.year)
+            if(eYear>this.year)
+            {
+              this.resultflag=false;
+            }
+            else if(eYear==this.year)
             {
 
               if(eMonth>month)

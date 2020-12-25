@@ -20,7 +20,7 @@ msg:string="";
    upVote:number=0;
    downVote:number=0;
    status:number=0;
- ownerId:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+ ownerId:number=parseInt(localStorage.getItem('Id'));; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
   description:string;
   datestr:string;
 
