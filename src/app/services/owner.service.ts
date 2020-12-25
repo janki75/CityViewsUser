@@ -12,4 +12,8 @@ export class OwnerService {
   {
     return this.http.get(this.owner_url);
   }
+
+  getOwnerIdByEmail(email){
+    return this.http.get(this.owner_url+"byemail/"+email);
+  }
 }

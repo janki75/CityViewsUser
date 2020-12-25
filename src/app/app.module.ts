@@ -30,6 +30,10 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
 import { VotingComponent } from './views/voting/voting.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MyflatComponent } from './views/myflat/myflat.component';
+import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,8 @@ import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
     ForgetpasswordComponent,
     ChangepasswordComponent,
     VotingComponent,
+    MyflatComponent,
+    FlatdetailComponent,
 
   ],
   imports: [
@@ -61,7 +67,9 @@ import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
     MatExpansionModule,
     MatDatepickerModule, 
     MatNativeDateModule,
-  MatIconModule
+  MatIconModule,
+ MatListModule,
+ MatRadioModule
 
 
   ],

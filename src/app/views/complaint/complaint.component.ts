@@ -20,7 +20,7 @@ msg:string="";
    upVote:number=0;
    downVote:number=0;
    status:number=0;
- ownerId:number=6; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+ ownerId:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
   description:string;
   datestr:string;
 
@@ -32,7 +32,7 @@ msg:string="";
   upV:number;
    downv:number;
    stat:number;
- ownId:number=1; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+ ownId:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
   descri:string;
 
 
@@ -73,7 +73,7 @@ this.getAllComplaint();
   {
 
     let c;
-    let d=this.date.getDate()+"/"+this.date.getMonth()+"/"+this.date.getFullYear();
+    let d=this.date.getDate()+"/"+((this.date.getMonth())+1)+"/"+this.date.getFullYear();
     this.datestr=d.toString();
     this._compserv.addComplaint(new complaint_Class(this.id,this.datestr,this.description,this.upVote,this.downVote,this.status,this.ownerId)).subscribe(
       (data:complaint_Class)=>{

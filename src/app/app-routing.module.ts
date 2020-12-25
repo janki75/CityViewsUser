@@ -6,6 +6,8 @@ import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.co
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
 import { ElectionComponent } from './views/election/election.component';
 import { VotingComponent } from './views/voting/voting.component';
+import { MyflatComponent } from './views/myflat/myflat.component';
+import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 
 const routes: Routes = [
   {
@@ -23,7 +25,13 @@ const routes: Routes = [
   },
   {
     path:'voting',component:VotingComponent
-  }
+   
+  },
+  {
+    path:'flatdetail/:id',
+    component:FlatdetailComponent
+  },
+  {path:'myflat',component:MyflatComponent}
 ];
 
 @NgModule({

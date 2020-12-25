@@ -1,82 +1,63 @@
 <app-header></app-header>
 <div class="title" style=" margin-top: -130px;">
   <h3 style="font-size: 35px">Voting</h3>
+  
 </div>
+
 <div class="welcome" >
     <div class="container"  style="margin-top: -5%;">
       <div class="w3ls-row alert">
         <div class="col-md-20 welcome-right">
-            <mat-accordion class="example-headers-align">
-                <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-                    <mat-expansion-panel-header>
+          <p style="color : red; text-align: center; font-size:large; font-weight: bold;" *ngIf="cntErr.length != 0">You are a not allowed to take a part in voting session!!</p>
+          <p style="color : red; text-align: center; font-size:large; font-weight: bold;" *ngIf="cntErr.length == 0 && err != ''">{{ err }}</p>
+            <mat-accordion class="example-headers-align" *ngIf="cntErr.length == 0  && err == ''">
+                <mat-expansion-panel *ngFor="let a of pos" [expanded]="step === a.id" (opened)="setStep(a.id)" hideToggle>
+                    <mat-expansion-panel-header style="background-color: teal;" (click)="getData(a)">
                       <mat-panel-title>
-                        Destination
+                        
                       </mat-panel-title>
-                      <mat-panel-description>
-                        Type the country name
-                        <mat-icon>map</mat-icon>
+                      <mat-panel-description style="margin-left: 20%; color: white;">
+                        {{ a.pos }}
+                        <mat-icon></mat-icon>
                       </mat-panel-description>
                     </mat-expansion-panel-header>
                 
                     <mat-form-field>
-                      <mat-label>Country</mat-label>
-                      <input matInput>
+                      <mat-label>
+                        
+                        </mat-label>
+                        <!-- <label id="example-radio-group-label">Vote one of them :</label>
+                          <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="candName">
+                            <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)">
+                              {{hello}}
+                            </mat-radio-button>
+                          </mat-radio-group> -->
+                              
+                        
+                        <label id="example-radio-group-label" style="font-size: larger;">Vote one of them :</label>
+                          <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="candName">
+                        
+                            <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)" style="font-size: large; padding: 5%;" [disabled]='status2'>
+                              {{ele.ownername  + ' - ' + ele.email}}
+                          </mat-radio-button>
+                            
+                          </mat-radio-group>
+                        <p>
+                          <!-- Option selected: {{shoes.selectedOptions.selected[0]?.value}} -->
+                        </p>
+                      <input matInput [(ngModel)]="candName" disabled style="color: black;">
                     </mat-form-field>
                 
-                    <mat-action-row>
-                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                      <button mat-button color="primary" (click)="nextStep()">Next</button>
-                    </mat-action-row>
                   </mat-expansion-panel>
-                
-                <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Destination
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Type the country name
-                      <mat-icon>map</mat-icon>
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-              
-                  <mat-form-field>
-                    <mat-label>Country</mat-label>
-                    <input matInput>
-                  </mat-form-field>
-              
-                  <mat-action-row>
-                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                    <button mat-button color="primary" (click)="nextStep()">Next</button>
-                  </mat-action-row>
-                </mat-expansion-panel>
-              
-                <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      Day of the trip
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Inform the date you wish to travel
-                      <mat-icon>date_range</mat-icon>
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-              
-                  <mat-form-field>
-                    <mat-label>Date</mat-label>
-                    <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
-                  </mat-form-field>
-                  <mat-datepicker #picker></mat-datepicker>
-              
-                  <mat-action-row>
-                    <button mat-button color="warn" (click)="prevStep()">Previous</button>
-                    <button mat-button color="primary" (click)="nextStep()">End</button>
-                  </mat-action-row>
-                </mat-expansion-panel>
-              
               </mat-accordion>
             
-
+                    
         </div>
 
         <div class="clearfix"> </div>
