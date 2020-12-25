@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OwnerService } from 'src/app/services/owner.service';
 import { login } from 'src/app/classes/login';
+import { owner_class } from 'src/app/classes/owner';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ export class LoginComponent implements OnInit {
   email:string;
   password:string;
   hide:boolean=true;
+  id:number;
+
   ngOnInit() {
   }
   onlogin()
@@ -29,6 +32,14 @@ export class LoginComponent implements OnInit {
         else
         {
           localStorage.setItem('ownerId',this.email);
+          this._ownerserv.getownerByemail(this.email).subscribe(
+            (data:any)=>{
+              this.id=data.id;
+              console.log(this.id);
+              localStorage.setItem('Id',this.id+'');
+            }
+          );
+        
           this._route.navigate(['/home']);
          
         }

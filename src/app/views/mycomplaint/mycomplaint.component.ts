@@ -9,7 +9,7 @@ import { complaint_Class } from 'src/app/classes/complaint';
 })
 export class MycomplaintComponent implements OnInit {
 i:number=0;
-ownerId:number=parseInt(localStorage.getItem('ownerId'));
+ownerId:number=parseInt(localStorage.getItem('Id'));
   constructor(private _compserv:ComplaintService) { }
 arrcomplaint:complaint_Class[]=[];
   ngOnInit() {
