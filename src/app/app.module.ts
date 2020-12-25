@@ -29,6 +29,10 @@ import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.c
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
+import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
+import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -46,6 +50,9 @@ import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
     ChangepasswordComponent,
     MyflatComponent,
     FlatdetailComponent,
+    ShowmaintenancedetailComponent,
+    ShowunpaidmaintenanceComponent,
+    PaidunpaidmaintenanceComponent,
 
   ],
   imports: [
@@ -59,6 +66,7 @@ import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatCardModule,
 
   MatIconModule,
 

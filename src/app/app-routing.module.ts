@@ -7,6 +7,9 @@ import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component'
 import { ElectionComponent } from './views/election/election.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
+import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
+import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
 
 const routes: Routes = [
   {
@@ -28,7 +31,10 @@ const routes: Routes = [
   {
     path:'flatdetail/:id',
     component:FlatdetailComponent
-  }
+  },
+  {path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent},
+  {path:'showmaintenance/:id',component:ShowmaintenancedetailComponent},
+  {path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent}
 ];
 
 @NgModule({

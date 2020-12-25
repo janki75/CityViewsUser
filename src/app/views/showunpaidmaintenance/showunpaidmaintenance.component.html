@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="title" style=" margin-top: -160px;">
+  <h3 style="font-size: 35px">Due Maintenance Detail</h3>
+  <p>500 for 1Bhk , 1000 for 2Bhk , 1500 for 3Bhk </p>
+</div>
+
+<table style="margin-top: -20px">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Status</th>
+      <th>Action</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of unpaidarr">
+
+       <td >
+        <div *ngIf="item==1">
+         <h5 style="font-size: 20px">January</h5>
+        </div>
+        <div *ngIf="item==2">
+          <h5 style="font-size: 20px">February</h5>
+         </div>
+         <div *ngIf="item==3">
+            <h5 style="font-size: 20px">March</h5>
+           </div>
+           <div *ngIf="item==4">
+              <h5 style="font-size: 20px">April</h5>
+             </div>
+             <div *ngIf="item==5">
+                <h5 style="font-size: 20px">May</h5>
+               </div>
+               <div *ngIf="item==6">
+                  <h5 style="font-size: 20px">June</h5>
+                 </div>
+                 <div *ngIf="item==7">
+                    <h5 style="font-size: 20px">July</h5>
+                   </div>
+                   <div *ngIf="item==8">
+                      <h5 style="font-size: 20px">August</h5>
+                     </div>
+                     <div *ngIf="item==9">
+                        <h5 style="font-size: 20px">September</h5>
+                       </div>
+                       <div *ngIf="item==10">
+                          <h5 style="font-size: 20px">October</h5>
+                         </div>
+                         <div *ngIf="item==11">
+                            <h5 style="font-size: 20px">November</h5>
+                           </div>
+                           <div *ngIf="item==12">
+                              <h5 style="font-size: 20px">December</h5>
+                             </div>
+
+      </td>
+
+      <td>
+        <h5 style="font-size: 20px">{{unpaidstr}}</h5></td>
+        <td>
+            <button type="button" class="btn btn-warning" style="width: 120px">Pay Now</button>
+        </td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+<app-footer></app-footer>

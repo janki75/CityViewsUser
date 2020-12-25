@@ -1,6 +1,6 @@
 import { FlatService } from 'src/app/services/flat.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { flat_class } from 'src/app/classes/flat';
 
 @Component({
@@ -10,7 +10,7 @@ import { flat_class } from 'src/app/classes/flat';
 })
 export class FlatdetailComponent implements OnInit {
 
-  constructor(private _acroute:ActivatedRoute,private _flatserv:FlatService) { }
+  constructor(private _acroute:ActivatedRoute,private _flatserv:FlatService,private _route:Router) { }
   flatId:number;
   flatNo:string;
    occupied:boolean;
@@ -37,6 +37,13 @@ export class FlatdetailComponent implements OnInit {
 
       }
     );
+  }
+  onshow(id)
+  {
+       console.log(id);
+
+       this._route.navigate(['/paidunpaid',id]);
+
   }
 
 }
