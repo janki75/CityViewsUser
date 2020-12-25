@@ -58,13 +58,7 @@ const routes: Routes = [
     path:'viewprofile',component:ViewprofileComponent
   },
   {
-<<<<<<< HEAD
-    path:'flatdetail/:id',
-    component:FlatdetailComponent,
-    canActivate:[UserAuthService]
-=======
     path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
->>>>>>> b5be623cda5466becd805633d6c94092eaa9fa24
   },
 
   {
@@ -74,17 +68,13 @@ const routes: Routes = [
     path:'forgetpassword',
     component:ForgetpasswordComponent
   },
-  //maintenance 
+  //maintenance
   {
     path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent,canActivate:[UserAuthService]
   },
-<<<<<<< HEAD
-
-=======
   {
     path:'showmaintenance/:id',component:ShowmaintenancedetailComponent,canActivate:[UserAuthService]
   },
->>>>>>> b5be623cda5466becd805633d6c94092eaa9fa24
   {
     path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent,canActivate:[UserAuthService]
   },

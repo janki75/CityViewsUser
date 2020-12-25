@@ -11,12 +11,7 @@ import { flat_class } from 'src/app/classes/flat';
 export class MyflatComponent implements OnInit {
 
   constructor(private _flatserv:FlatService,private _route:Router) { }
-<<<<<<< HEAD
-  ownerId:number=2;
-  //  ownerId:number=parseInt(localStorage.getItem('ownerId'));
-=======
    ownerId:number=parseInt(localStorage.getItem('Id'));;
->>>>>>> b5be623cda5466becd805633d6c94092eaa9fa24
   arrflat:flat_class[]=[];
   ngOnInit() {
     console.log(localStorage.getItem('Id'));
