@@ -8,7 +8,8 @@ export class owner_class
         public contactNo:string,
         public email:string,
         public dateOfPurchase:Date,
-        public active:boolean
+        public active:boolean,
+        public password:string
 
 ){}
 }
