@@ -32,7 +32,7 @@ msg:string="";
   upV:number;
    downv:number;
    stat:number;
- ownId:number=parseInt(localStorage.getItem('ownerId'));
+ ownId:number=parseInt(localStorage.getItem('Id'));
  
   descri:string;
 
