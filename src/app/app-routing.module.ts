@@ -5,6 +5,7 @@ import { ComplaintComponent } from './views/complaint/complaint.component';
 import { EditComplaintComponent } from './views/edit-complaint/edit-complaint.component';
 import { MycomplaintComponent } from './views/mycomplaint/mycomplaint.component';
 import { ElectionComponent } from './views/election/election.component';
+import { VotingComponent } from './views/voting/voting.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
@@ -49,15 +50,38 @@ const routes: Routes = [
     path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
   },
   {
+    path:'voting',component:VotingComponent
+   
+  },
+  {
+    path:'flatdetail/:id',
+    component:FlatdetailComponent
+  },
+  {
+    path:'myflat',component:MyflatComponent
+  },
+  {
     path:'viewprofile/changepassword/:id',component:ChangepasswordComponent
   },
   {
     path:'flatdetail/:id',
     component:FlatdetailComponent
   },
+<<<<<<< HEAD
   {path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent},
   {path:'showmaintenance/:id',component:ShowmaintenancedetailComponent},
   {path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent},
+=======
+  {
+    path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent
+  },
+  {
+    path:'showmaintenance/:id',component:ShowmaintenancedetailComponent
+  },
+  {
+    path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent
+  },
+>>>>>>> 3c53b4fc6788bad08c96510b828fc0a0b8398ea3
   {
     component:FlatdetailComponent,canActivate:[UserAuthService]
   },

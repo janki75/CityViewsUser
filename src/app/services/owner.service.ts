@@ -18,6 +18,10 @@ export class OwnerService {
   {
     return this.http.get(this.owner_url);
   }
+
+  getOwnerIdByEmail(email){
+    return this.http.get(this.owner_url+"byemail/"+email);
+  }
   getownerByemail(email)
   {
    return this.http.get(this.ownerbyemail_url+email);
