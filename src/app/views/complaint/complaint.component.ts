@@ -32,7 +32,8 @@ msg:string="";
   upV:number;
    downv:number;
    stat:number;
- ownId:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+ ownId:number=parseInt(localStorage.getItem('ownerId'));
+ 
   descri:string;
 
 
@@ -48,6 +49,10 @@ this.getAllComplaint();
     this._compserv.getAllComplaints().subscribe(
       (data:complaint_Class[])=>{
         this.arrcomplaint=data;
+        if(data.length==0)
+        {
+          this.errmsg="No Complaints to Display!!"
+        }
       }
     );
   }

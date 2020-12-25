@@ -22,7 +22,7 @@ export class ElectionComponent implements OnInit {
   election_id:number;
   position_id:number;
   i:number=0;
-  owner_id:number=2; //localStorage.getItem('ownerId'); //change this after login is added.temporary it is static
+  owner_id:number=parseInt(localStorage.getItem('ownerId'));
   constructor(private route:Router,private _eleserv:ElectionService) { }
   arrelection:any[]=[];
   arrelectionpos:electionposition_class[]=[];

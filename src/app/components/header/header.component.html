@@ -53,7 +53,7 @@
 									</span>
 									<span>Complaint</span>
 								</a>
-							</li>
+							</li> 
 							<li>
 								<a routerLink="/elections" onclick="$('#section-2').animatescroll();">
 									<span class="icon">
@@ -72,19 +72,19 @@
 								</a>
 							</li>
 							<li>
-								<a href="codes.html" onclick="$('#section-5').animatescroll();">
+								<a routerLink="/viewprofile" onclick="$('#section-5').animatescroll();">
 									<span class="icon">
-										<i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
+										<i aria-hidden="true" class="icon-user glyphicon glyphicon-user"></i>
 									</span>
-									<span>Short Codes</span>
+									<span>My Profile</span>
 								</a>
 							</li>
 							<li>
-								<a href="" onclick="$('#section-6').animatescroll();">
+								<a (click)="onlogout()" onclick="$('#section-6').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
                   </span>
-                  <span>More</span>
+                  <span>Logout</span>
 
 
                 </a>
