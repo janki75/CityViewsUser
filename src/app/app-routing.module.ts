@@ -51,7 +51,7 @@ const routes: Routes = [
   },
   {
     path:'voting',component:VotingComponent
-   
+
   },
   {
     path:'flatdetail/:id',
@@ -65,13 +65,10 @@ const routes: Routes = [
   },
   {
     path:'flatdetail/:id',
-    component:FlatdetailComponent
+    component:FlatdetailComponent,
+    canActivate:[UserAuthService]
   },
-<<<<<<< HEAD
-  {path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent},
-  {path:'showmaintenance/:id',component:ShowmaintenancedetailComponent},
-  {path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent},
-=======
+
   {
     path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent
   },
@@ -81,10 +78,7 @@ const routes: Routes = [
   {
     path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent
   },
->>>>>>> 3c53b4fc6788bad08c96510b828fc0a0b8398ea3
-  {
-    component:FlatdetailComponent,canActivate:[UserAuthService]
-  },
+
   {
     path:'forgetpassword',
     component:ForgetpasswordComponent
