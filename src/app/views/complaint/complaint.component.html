@@ -46,6 +46,19 @@
         </div>
 
         </div>
+        <div *ngIf="errmsg" class="comments-top-top">
+          <div  class="top-comment-left">
+              <a href="#"><img class="img-responsive" src="../../../assets/images/icon1.png" alt=""></a>
+          </div>
+
+          <div  class="top-comment-right">
+            <ul>
+                <li><span class="left-at">{{errmsg}}</span></li>
+            </ul>
+          </div>
+        </div>  
+
+        
     <div *ngFor="let item of arrcomplaint" class="comments-top-top">
         <div  class="top-comment-left">
             <a href="#"><img class="img-responsive" src="../../../assets/images/icon1.png" alt=""></a>

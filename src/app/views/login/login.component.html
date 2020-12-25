@@ -42,7 +42,11 @@
                     <label for="password" class="sr-only">Password</label>
                      
                     <input minlength="8" #pass="ngModel" required [(ngModel)]="password"  [type]="hide ? 'password' : 'text'" name="password" id="password" class="form-control" placeholder="***********">
+                    <div style="margin-top: -55px;margin-left: 290px;cursor: pointer;">
+
+
                     <mat-icon style="color: black" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </div>
                     <div [hidden]="pass.valid || pass.untouched">
                       <div [hidden]="!pass.errors?.required"  class="text-danger">
                             <font size=2>*please enter Password</font>

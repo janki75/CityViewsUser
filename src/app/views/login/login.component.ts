@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this._ownerserv.login(new login(this.email,this.password)).subscribe(
       (data:login[])=>{
         console.log(data);
-        if(data==null)
+        if(data==null || this.email=='admin@gmail.com')
         {
           alert("your email or password is wrong!!");
         }
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   onforget()
   {
 
-    this._route.navigate(['/forget']);
+    this._route.navigate(['/forgetpassword']);
   }
 
 

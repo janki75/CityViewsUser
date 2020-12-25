@@ -9,6 +9,7 @@ import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 import { LoginComponent } from './views/login/login.component';
 import { UserAuthService } from './services/user-auth.service';
+import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path:'flatdetail/:id',
     component:FlatdetailComponent,canActivate:[UserAuthService]
+  },
+  {
+    path:'forgetpassword',
+    component:ForgetpasswordComponent
   }
 ];
 
