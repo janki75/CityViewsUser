@@ -14,7 +14,7 @@ export class MyflatComponent implements OnInit {
    ownerId:number=parseInt(localStorage.getItem('ownerId'));;
   arrflat:flat_class[]=[];
   ngOnInit() {
-    this._flatserv.getFlatsByOwnerId(this.ownerId).subscribe(
+    this._flatserv.getFlatsByOwnerId(2).subscribe(
       (data:flat_class[])=>{
         this.arrflat=data;
       }

@@ -54,10 +54,6 @@ const routes: Routes = [
    
   },
   {
-    path:'flatdetail/:id',
-    component:FlatdetailComponent
-  },
-  {
     path:'myflat',component:MyflatComponent
   },
   {
@@ -65,7 +61,7 @@ const routes: Routes = [
   },
   {
     path:'flatdetail/:id',
-    component:FlatdetailComponent
+    component:FlatdetailComponent,canActivate:[UserAuthService]
   },
   {
     path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent
@@ -75,9 +71,6 @@ const routes: Routes = [
   },
   {
     path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent
-  },
-  {
-    component:FlatdetailComponent,canActivate:[UserAuthService]
   },
   {
     path:'forgetpassword',
