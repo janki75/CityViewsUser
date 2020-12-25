@@ -54,8 +54,8 @@ export class ElectionComponent implements OnInit {
     var month=new Date().getMonth()+1;
     this.year=new Date().getFullYear();
     this.finaltodaydt=day+"/"+month+"/"+this.year;
-   
-   
+
+
       for(this.i=0;this.i<data.length;this.i++)
       {
         if(data[this.i].active)
@@ -94,17 +94,17 @@ export class ElectionComponent implements OnInit {
               this.resultflag=true;
             }
            const da={
-            
+
                election_id:data[this.i].id,
                active:data[this.i].active,
                date:data[this.i].date,
                election_name:data[this.i].electionName,
                endDate:data[this.i].endDate,
             resultflag:this.resultflag,
-      
+
           }
                this.arrelection.push(da);
-               
+
         }
 
       }
@@ -114,7 +114,7 @@ export class ElectionComponent implements OnInit {
       (data:electionposition_class[])=>{
         this.arrelectionpos=data;
         console.log(data);
-        
+
       }
     );
   }
@@ -178,7 +178,7 @@ export class ElectionComponent implements OnInit {
       }
     }
   );
-   
+
   }
   onclose()
   {
@@ -191,7 +191,7 @@ export class ElectionComponent implements OnInit {
     this._eleserv.getelectionresult(this.election_id).subscribe(
       (data:any)=>{
         console.log(data);
-        
+
         for(this.i=0;this.i<this.arrelectionpos.length;this.i++)
         {
           this.max=0;

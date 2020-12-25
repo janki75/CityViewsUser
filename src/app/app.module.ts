@@ -27,10 +27,19 @@ import { ElectionComponent } from './views/election/election.component';
 import { LoginComponent } from './views/login/login.component';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
+import { VotingComponent } from './views/voting/voting.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
 import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
+import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
+import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
+import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -46,10 +55,14 @@ import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
     LoginComponent,
     ForgetpasswordComponent,
     ChangepasswordComponent,
+    VotingComponent,
     ViewprofileComponent,
     ManageprofileComponent,
     MyflatComponent,
     FlatdetailComponent,
+    ShowmaintenancedetailComponent,
+    ShowunpaidmaintenanceComponent,
+    PaidunpaidmaintenanceComponent,
 
   ],
   imports: [
@@ -63,8 +76,14 @@ import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatExpansionModule,
+    MatDatepickerModule, 
+    MatNativeDateModule,
+    MatCardModule,
 
   MatIconModule,
+ MatListModule,
+ MatRadioModule
 
 
   ],

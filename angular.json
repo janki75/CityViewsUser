@@ -121,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "CityViewsUser"
+  "defaultProject": "CityViewsUser",
+  "cli": {
+    "analytics": false
+  }
 }
