@@ -30,6 +30,8 @@ import { ChangepasswordComponent } from './views/changepassword/changepassword.c
 import { VotingComponent } from './views/voting/voting.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
+import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 import {MatListModule} from '@angular/material/list';
@@ -49,6 +51,8 @@ import {MatRadioModule} from '@angular/material/radio';
     ForgetpasswordComponent,
     ChangepasswordComponent,
     VotingComponent,
+    ViewprofileComponent,
+    ManageprofileComponent,
     MyflatComponent,
     FlatdetailComponent,
 

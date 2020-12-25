@@ -8,20 +8,43 @@ import { ElectionComponent } from './views/election/election.component';
 import { VotingComponent } from './views/voting/voting.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import { LoginComponent } from './views/login/login.component';
+import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
+import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
+import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
+import { UserAuthService } from './services/user-auth.service';
+import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 
 const routes: Routes = [
   {
-    path:'',component:HomepageComponent
+    path:'',component:LoginComponent  
   },
-  {path:'complaint',component:ComplaintComponent},
   {
-    path:'editcomplaint/:id',component:EditComplaintComponent
+    path:'home',
+    component:HomepageComponent,
+    canActivate:[UserAuthService]
+  },
+  {path:'complaint',component:ComplaintComponent,canActivate:[UserAuthService]},
+  {
+    path:'editcomplaint/:id',component:EditComplaintComponent,canActivate:[UserAuthService]
+  },
+  {
+    path:'mycomplaint',component:MycomplaintComponent,canActivate:[UserAuthService]
+  },
+  {
+    path:'elections',component:ElectionComponent,canActivate:[UserAuthService]
+  },
+  {
+    path:'myflat',component:MyflatComponent,canActivate:[UserAuthService]
   },
   {
     path:'mycomplaint',component:MycomplaintComponent
   },
   {
-    path:'elections',component:ElectionComponent
+    path:'viewprofile',component:ViewprofileComponent
+  },
+  {
+    path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
   },
   {
     path:'voting',component:VotingComponent
@@ -31,7 +54,20 @@ const routes: Routes = [
     path:'flatdetail/:id',
     component:FlatdetailComponent
   },
-  {path:'myflat',component:MyflatComponent}
+  {
+    path:'myflat',component:MyflatComponent
+  },
+  {
+    path:'viewprofile/changepassword/:id',component:ChangepasswordComponent
+  },
+  {
+    path:'flatdetail/:id',
+    component:FlatdetailComponent,canActivate:[UserAuthService]
+  },
+  {
+    path:'forgetpassword',
+    component:ForgetpasswordComponent
+  }
 ];
 
 @NgModule({
