@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container" style="margin-top: -100px;margin-left: 360px">
+    <main class="grid">
+
+      <article>
+        <img src="../../../assets/images/paid8.png" alt="Sample photo">
+        <br><br>
+        <div class="text" style="margin-top: -10px">
+          <h3>Paid Maintenance Details</h3>
+          <p>Details of months for which maintenance is paid!</p>
+          <a (click)="onshowpaid(this.flatId)" class="btn btn-primary btn-block">Show Details</a>
+        </div>
+      </article>
+      <article>
+          <img src="../../../assets/images/due3.jpg" alt="Sample photo">
+
+          <div class="text">
+            <h3>Due Maintenance Details</h3>
+            <p>Details of months for which maintenance is due!</p>
+            <a (click)="onshowdue(this.flatId)" class="btn btn-primary btn-block">Show Details</a>
+          </div>
+        </article>
+
+
+    </main>
+  </div>
+  <br><br>
+
+<app-footer></app-footer>

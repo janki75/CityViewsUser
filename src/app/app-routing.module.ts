@@ -8,6 +8,9 @@ import { ElectionComponent } from './views/election/election.component';
 import { VotingComponent } from './views/voting/voting.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
+import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
+import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
+import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
 import { LoginComponent } from './views/login/login.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
 import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
@@ -62,6 +65,18 @@ const routes: Routes = [
   },
   {
     path:'flatdetail/:id',
+    component:FlatdetailComponent
+  },
+  {
+    path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent
+  },
+  {
+    path:'showmaintenance/:id',component:ShowmaintenancedetailComponent
+  },
+  {
+    path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent
+  },
+  {
     component:FlatdetailComponent,canActivate:[UserAuthService]
   },
   {

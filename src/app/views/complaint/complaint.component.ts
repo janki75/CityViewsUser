@@ -126,7 +126,7 @@ this.getAllComplaint();
   ondisableclick()
   {
     alert("You can't upvote to a complaint which is resolved or rejected!!");
-    
+
   }
   ondisabledownvote()
   {

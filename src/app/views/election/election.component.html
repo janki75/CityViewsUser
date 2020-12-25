@@ -1,6 +1,6 @@
 <app-header></app-header>
-<div class="title">
-		<h3> Elections </h3>
+<div class="title" style=" margin-top: -130px;">
+		<h3 style="font-size: 35px"> Elections </h3>
 	</div>
 <div class="slid about-w3ls-slid">
         <div class="container">
@@ -13,34 +13,34 @@
 	<div class="latest">
 			<div class="abc" style="background-color: black">
 		<div class="container">
-			 
+
 			<div class="w3ls-row">
 					<div *ngIf="msg1" class="col-sm-4 col-md-4  w3latest-grids">
-							<img style="margin-left: 20%;border-radius: 20%;height:50%;width: 50%" src="../../../assets//images/ele1.png" class="img-responsive" alt=""/> 
+							<img style="margin-left: 20%;border-radius: 20%;height:50%;width: 50%" src="../../../assets//images/ele1.png" class="img-responsive" alt=""/>
 							<div class="w3latest-grids-text">
 								<h4>{{msg1}}</h4>
-							
+
 							<span style="color:white" >		Election End On</span><p>{{item.endDate}}</p>
-							
-							
+
+
 							</div>
 					</div>
-		
-			
+
+
 				<div *ngFor="let item of arrelection" class="col-sm-4 col-md-4  w3latest-grids">
-					<img style="margin-left: 20%;border-radius: 20%;height:50%;width: 50%" src="../../../assets//images/ele1.png" class="img-responsive" alt=""/> 
+					<img style="margin-left: 20%;border-radius: 20%;height:50%;width: 50%" src="../../../assets//images/ele1.png" class="img-responsive" alt=""/>
 					<div class="w3latest-grids-text">
 						<h4>{{item.election_name}}</h4>
 					<span style="color:white" >	Start Date of election</span><p>{{item.date}}</p>
 					<span style="color:white" >		Election End On</span><p>{{item.endDate}}</p>
 					<button *ngIf="item.resultflag==false" (click)="onclick(item.election_id)" data-toggle="modal" data-target="#myModal" class="button button1">Apply For position</button>
-					<button (click)="onclickresult(item.election_id)"  class="button button1" data-toggle="modal" data-target="#myModal1" *ngIf="item.resultflag==true" >Show Result</button>		
+					<button (click)="onclickresult(item.election_id)"  class="button button1" data-toggle="modal" data-target="#myModal1" *ngIf="item.resultflag==true" >Show Result</button>
 						<!-- <a *ngIf="item.resultflag==false" (click)="onclick(item.election_id)" style="margin-top:-20%;margin-left: -15%" data-toggle="modal" data-target="#myModal" class="more">Apply For Position</a>
 						<a *ngIf="item.resultflag==true" style="margin-top:-20%;margin-left: -15%"  class="more">Show Result</a> -->
 							   <!-- Modal -->
 								 <div id="myModal" class="modal fade" role="dialog">
 									<div class="modal-dialog">
-				
+
 										<!-- Modal content-->
 										<div class="modal-content">
 											<div class="modal-header">
@@ -68,7 +68,7 @@
 												<button (click)="onclose()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 											</div>
 										</div>
-				
+
 									</div>
 								</div>
 
@@ -76,7 +76,7 @@
 								   <!-- Modal -->
 								   <div id="myModal1" class="modal fade" role="dialog">
 									<div class="modal-dialog">
-				
+
 										<!-- Modal content-->
 										<div class="modal-content">
 											<div class="modal-header">
@@ -93,38 +93,38 @@
 																  </tr>
 																  <tr *ngFor="let item of arrwinner">
 																	<td>{{item.posName}}</td>
-																	
+
 																	<td>{{item.ownerName}}</td>
 																	<td>{{item.vote}}</td>
 																  </tr>
-														  
-														  
+
+
 														  </table>
 											</div>
 											<div class="modal-footer">
-	
+
 												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 											</div>
 										</div>
-				
+
 									</div>
 								</div>
 								<!-- second modal end -->
-				
-					
-					
+
+
+
 					</div>
 
 				</div>
 				</div>
-				
-			
+
+
 				<div class="clearfix"> </div>
-			
+
 			</div>
 		</div>
 	</div>
 
 
-	
+
 	<app-footer></app-footer>

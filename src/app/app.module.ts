@@ -36,6 +36,11 @@ import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
+import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/showmaintenancedetail.component';
+import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
+import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +60,9 @@ import {MatRadioModule} from '@angular/material/radio';
     ManageprofileComponent,
     MyflatComponent,
     FlatdetailComponent,
+    ShowmaintenancedetailComponent,
+    ShowunpaidmaintenanceComponent,
+    PaidunpaidmaintenanceComponent,
 
   ],
   imports: [
@@ -71,6 +79,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatExpansionModule,
     MatDatepickerModule, 
     MatNativeDateModule,
+    MatCardModule,
+
   MatIconModule,
  MatListModule,
  MatRadioModule
