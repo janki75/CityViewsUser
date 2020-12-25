@@ -8,7 +8,6 @@ import { ElectionComponent } from './views/election/election.component';
 import { MyflatComponent } from './views/myflat/myflat.component';
 import { FlatdetailComponent } from './views/flatdetail/flatdetail.component';
 import { LoginComponent } from './views/login/login.component';
-import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { ChangepasswordComponent } from './views/changepassword/changepassword.component';
 import { ViewprofileComponent } from './views/viewprofile/viewprofile.component';
 import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
