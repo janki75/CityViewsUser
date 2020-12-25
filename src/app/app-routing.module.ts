@@ -19,6 +19,7 @@ import { UserAuthService } from './services/user-auth.service';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 
 const routes: Routes = [
+  //home and login
   {
     path:'',component:LoginComponent
   },
@@ -27,6 +28,7 @@ const routes: Routes = [
     component:HomepageComponent,
     canActivate:[UserAuthService]
   },
+  //complaint routes
   {path:'complaint',component:ComplaintComponent,canActivate:[UserAuthService]},
   {
     path:'editcomplaint/:id',component:EditComplaintComponent,canActivate:[UserAuthService]
@@ -34,55 +36,58 @@ const routes: Routes = [
   {
     path:'mycomplaint',component:MycomplaintComponent,canActivate:[UserAuthService]
   },
+  //election routes
   {
     path:'elections',component:ElectionComponent,canActivate:[UserAuthService]
-  },
-  {
-    path:'myflat',component:MyflatComponent,canActivate:[UserAuthService]
-  },
-  {
-    path:'mycomplaint',component:MycomplaintComponent
-  },
-  {
-    path:'viewprofile',component:ViewprofileComponent
-  },
-  {
-    path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
   },
   {
     path:'voting',component:VotingComponent
 
   },
+  //flat routes
   {
-    path:'flatdetail/:id',
-    component:FlatdetailComponent
-  },
-  {
-    path:'myflat',component:MyflatComponent
-  },
-  {
-    path:'viewprofile/changepassword/:id',component:ChangepasswordComponent
+    path:'myflat',component:MyflatComponent,canActivate:[UserAuthService]
   },
   {
     path:'flatdetail/:id',
     component:FlatdetailComponent,
     canActivate:[UserAuthService]
   },
+  //profile
+  {
+    path:'viewprofile',component:ViewprofileComponent
+  },
+  {
+<<<<<<< HEAD
+    path:'flatdetail/:id',
+    component:FlatdetailComponent,
+    canActivate:[UserAuthService]
+=======
+    path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
+>>>>>>> b5be623cda5466becd805633d6c94092eaa9fa24
+  },
 
   {
-    path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent
+    path:'viewprofile/changepassword/:id',component:ChangepasswordComponent,canActivate:[UserAuthService]
   },
-  {
-    path:'showmaintenance/:id',component:ShowmaintenancedetailComponent
-  },
-  {
-    path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent
-  },
-
   {
     path:'forgetpassword',
     component:ForgetpasswordComponent
-  }
+  },
+  //maintenance 
+  {
+    path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent,canActivate:[UserAuthService]
+  },
+<<<<<<< HEAD
+
+=======
+  {
+    path:'showmaintenance/:id',component:ShowmaintenancedetailComponent,canActivate:[UserAuthService]
+  },
+>>>>>>> b5be623cda5466becd805633d6c94092eaa9fa24
+  {
+    path:'showunpaidmaintenance/:id',component:ShowunpaidmaintenanceComponent,canActivate:[UserAuthService]
+  },
 ];
 
 @NgModule({
