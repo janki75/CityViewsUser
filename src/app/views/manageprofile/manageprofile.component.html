@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <section class="content">
     <div class="container-fluid">
 <div class="row clearfix">
@@ -6,11 +6,11 @@
         <div class="card">
             <div class="title" style=" margin-top: -130px;">
                 <h3 style="font-size: 35px">Edit Profile Details</h3>
-              
+
               </div>
             <div class="body">
                 <form mamthod="POST" #editprofileform="ngForm" >
-                  
+
                     <label for="contactNo">Contact Number</label>
                     <div class="form-group">
                         <div class="form-line">
@@ -31,7 +31,7 @@
                                   <font size=2>*Email is a mandotory field</font>
                             </div>
                             <div [hidden]="!em?.errors?.email" class="text-danger">
-                                <font size=2>*Please enter a valid email</font> 
+                                <font size=2>*Please enter a valid email</font>
                             </div>
                         </div>
                         <p style="color: red; font-size: large; text-align: center;">{{ emailreserved }}</p>
@@ -51,4 +51,61 @@
 </div>
 </section>
 <app-footer></app-footer>
+ -->
+
+ <app-header></app-header>
+
+
+
+ <div class="title" style=" margin-top: -160px;">
+   <h3 style="font-size: 35px">Edit Profile Details</h3>
+
+ </div>
+
+ <form #editprofileform="ngForm" method="post" >
+
+
+
+   <fieldset>
+     <legend><span class="number">*</span>Edit Profile Details From Here!</legend>
+     <label for="contactNo">Contact Number</label>
+     <div class="form-group">
+         <div class="form-line">
+             <input #num="ngModel" required maxlength="10" minlength="10" pattern="[0-9]*" name="contactNo" [(ngModel)]="contactNo" type="text" id="contactNo" class="form-control" placeholder="Enter Contact Number">
+         </div>
+
+         <span *ngIf="num.invalid && num.touched && num.value" style="color:red; font-size:2; text-align:center;"> *Please Enter a Valid Contact Number </span>
+
+     </div>
+
+     <label for="email">Email</label>
+     <div class="form-group">
+         <div class="form-line">
+             <input required email #em="ngModel" name="email" [(ngModel)]="email" type="email" id="email" class="form-control" placeholder="Enter Email">
+         </div>
+         <div [hidden]="em.valid || em.untouched">
+             <div [hidden]="!em.errors?.required"  class="text-danger">
+                   <font size=2>*Email is a mandotory field</font>
+             </div>
+             <div [hidden]="!em?.errors?.email" class="text-danger">
+                 <font size=2>*Please enter a valid email</font>
+             </div>
+         </div>
+         <p style="color: red; font-size: large; text-align: center;">{{ emailreserved }}</p>
+     </div>
+
+
+
+   </fieldset>
+
+
+
+   <button type="submit" [disabled] = "editprofileform.invalid" (click)="updateprofile()" style="margin-left: 50px;">Update Profile</button>&nbsp;&nbsp;&nbsp;&nbsp;
+   <button type="submit" (click)="goBack()">Cancel</button>
+
+ </form>
+ <br><br>
+
+ <app-footer></app-footer>
+
 

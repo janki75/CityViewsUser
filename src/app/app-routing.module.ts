@@ -21,7 +21,7 @@ import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.c
 const routes: Routes = [
   //home and login
   {
-    path:'',component:LoginComponent  
+    path:'',component:LoginComponent
   },
   {
     path:'home',
@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   {
     path:'voting',component:VotingComponent
-   
+
   },
   //flat routes
   {
@@ -60,6 +60,7 @@ const routes: Routes = [
   {
     path:'viewprofile/manageprofile/:id',component:ManageprofileComponent
   },
+
   {
     path:'viewprofile/changepassword/:id',component:ChangepasswordComponent,canActivate:[UserAuthService]
   },
@@ -67,7 +68,7 @@ const routes: Routes = [
     path:'forgetpassword',
     component:ForgetpasswordComponent
   },
-  //maintenance 
+  //maintenance
   {
     path:'paidunpaid/:id',component:PaidunpaidmaintenanceComponent,canActivate:[UserAuthService]
   },
