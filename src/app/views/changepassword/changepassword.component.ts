@@ -56,8 +56,7 @@ export class ChangepasswordComponent implements OnInit {
                 console.log(data)
               }
             );
-            alert("Password updated successfully! You'll be redirected to login page!");
-            this._route.navigate(['']);
+            alert("Password updated successfully!");
           }
           else{
             alert("Old Password and New Password can not be same")
