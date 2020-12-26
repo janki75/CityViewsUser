@@ -33,7 +33,8 @@
 						<h4>{{item.election_name}}</h4>
 					<span style="color:white" >	Start Date of election</span><p>{{item.date}}</p>
 					<span style="color:white" >		Election End On</span><p>{{item.endDate}}</p>
-					<button *ngIf="item.resultflag==false" (click)="onclick(item.election_id)" data-toggle="modal" data-target="#myModal" class="button button1">Apply For position</button>
+					<button *ngIf="item.applyposflag==true" (click)="onclick(item.election_id)" data-toggle="modal" data-target="#myModal" class="button button1">Apply For position</button>
+					<button *ngIf="item.voteflag==true"  class="button button1">Vote Now</button>
 					<button (click)="onclickresult(item.election_id)"  class="button button1" data-toggle="modal" data-target="#myModal1" *ngIf="item.resultflag==true" >Show Result</button>
 						<!-- <a *ngIf="item.resultflag==false" (click)="onclick(item.election_id)" style="margin-top:-20%;margin-left: -15%" data-toggle="modal" data-target="#myModal" class="more">Apply For Position</a>
 						<a *ngIf="item.resultflag==true" style="margin-top:-20%;margin-left: -15%"  class="more">Show Result</a> -->

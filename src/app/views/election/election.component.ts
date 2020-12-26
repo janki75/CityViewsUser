@@ -17,7 +17,9 @@ export class ElectionComponent implements OnInit {
   flag:boolean=false;
   dt:Date;
   msg:string="";
-  resultflag:boolean=true;
+  resultflag:boolean=false;
+  applyposflag:boolean=false;
+  voteflag:boolean=false;
   // winner:boolean=false;
   election_id:number;
   position_id:number;
@@ -58,6 +60,9 @@ export class ElectionComponent implements OnInit {
 
       for(this.i=0;this.i<data.length;this.i++)
       {
+        this.resultflag=false;
+        this.applyposflag=false;
+        this.voteflag=false;
         if(data[this.i].active)
         {
           let sDate = data[this.i].date.substring(0,2);
@@ -66,30 +71,85 @@ export class ElectionComponent implements OnInit {
           let eDate = data[this.i].endDate.substring(0,2);
           let eMonth =data[this.i].endDate.substring(3,5);
           let eYear = data[this.i].endDate.substring(6,10);
+          //voteflag
+          if(sYear==this.year && sMonth>=month)
+          {
+            if(sDate>day)
+            {
+              this.voteflag=false;
+            }
+            else
+            {
+              if(eDate<day)
+              {
+                this.voteflag=false;
+              }
+              else
+              {
+                this.voteflag=true;
+              }
+            }
+          }
+          else if(eYear>this.year)
+          { 
+            this.voteflag=true;
+          }
+          else if(this.year==sYear && eYear==this.year)
+          {
+            if(eMonth>month)
+            {
+              this.voteflag=true;
+            }
+            else if(eMonth<month)
+            {
+              this.voteflag=false;
+            }
+            else
+            {
+              if(sDate<=day && eDate>=day)
+              {
+                this.voteflag=true;
+              }
+              else
+              {
+                this.voteflag=false;
+              }
+            }
+          }
+          else
+          {
+            this.voteflag=false;
+          }
+        //resultflag
+          console.log(this.voteflag);
+          console.log("hi"+this.resultflag);
+          if(this.voteflag!=true)
+          {
+            console.log("same");
             if(eYear>this.year)
             {
               this.resultflag=false;
             }
-            else if(eYear==this.year)
+            else if(sYear==this.year)
             {
 
-              if(eMonth>month)
+              if(sMonth>month)
               {
                 this.resultflag=false;
               }
-              else if(eMonth<month)
+              else if(sMonth<month)
               {
                 this.resultflag=true;
               }
               else
               {
-                if(eDate<day)
+                if(sDate>day)
                 {
-                  this.resultflag=true;
+                  this.resultflag=false;
                 }
                 else
                 {
-                  this.resultflag=false;
+                  this.resultflag=true;
                 }
               }
             }
@@ -97,6 +157,18 @@ export class ElectionComponent implements OnInit {
             {
               this.resultflag=true;
             }
+          }
+          
+          //applyposflag
+         
+          if(this.resultflag==false && this.voteflag==false)
+          {
+            this.applyposflag=true;
+          }
+          else
+          {
+            this.applyposflag=false;
+          }
            const da={
 
                election_id:data[this.i].id,
@@ -105,8 +177,12 @@ export class ElectionComponent implements OnInit {
                election_name:data[this.i].electionName,
                endDate:data[this.i].endDate,
             resultflag:this.resultflag,
+            voteflag:this.voteflag,
+            applyposflag:this.applyposflag
+            
 
           }
+          console.log(da);
                this.arrelection.push(da);
 
         }
