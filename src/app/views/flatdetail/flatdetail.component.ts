@@ -40,7 +40,7 @@ export class FlatdetailComponent implements OnInit {
   }
   onshow(id)
   {
-       console.log(id);
+       console.log(this.flatId);
 
        this._route.navigate(['/paidunpaid',id]);
 
