@@ -33,7 +33,9 @@ electionResults:any[] = [];
 ownerResults:any[] = []; 
 m:number=0;
 err:any="";
+flag:any=0;
 eleVoting:any[] = [];
+ele:any[]=[];
   step = 0;
 
   setStep(index: number) {
@@ -94,6 +96,41 @@ eleVoting:any[] = [];
       })
 
 
+      /*this.vote.getallelection()
+      .subscribe((res:any) => {
+          this.ele = res;
+          console.log(this.ele);
+          let date = new Date();
+      let currday = date.getDate();
+      let currmonth = date.getMonth()+1;
+      let curryear = date.getFullYear();
+           for(this.i=0;this.i<this.ele.length;this.i++){
+            let eleDate = this.ele[this.i].date;
+            let day = eleDate.substring(0,2);
+            let month = eleDate.substring(3,5);
+            let year = eleDate.substring(6,10);
+            let endDate = this.ele[this.i].endDate;
+            let endday = endDate.substring(0,2);
+            let endmonth = endDate.substring(3,5);
+            let endyear = endDate.substring(6,10);
+     
+            if(currday == day && currmonth == month && curryear == year){
+               break;
+            }
+            else if(currday > day && currmonth == month && curryear == year || currmonth > month && curryear == year || curryear > year){
+             if(currday <= endday && currmonth == endmonth && curryear == endyear || currmonth < endmonth && curryear == endyear || curryear < endyear){
+               break;
+             }
+             
+           }
+           else{
+             this.err = "Currently , no election is going on!!";
+             break;
+           }
+          }
+      
+      })
+
       this.vote.getallelectionresult()
     .subscribe((res:any)=>{
       this.eleResult = res;
@@ -111,7 +148,6 @@ eleVoting:any[] = [];
        let endmonth = endDate.substring(3,5);
        let endyear = endDate.substring(6,10);
 
-       
        if(currday == day && currmonth == month && curryear == year){
           this.electionId = this.eleResult[this.i].electionId;
           this.vote.getelectionresult(this.electionId)
@@ -119,36 +155,35 @@ eleVoting:any[] = [];
            this.eleDetail = res;
            for(this.j =0;this.j<this.eleDetail.length;this.j++){
             
-              if(this.eleDetail[this.j].email == "h@gmail.com"){
+              if(this.eleDetail[this.j].email == this.ownerEmail){
                     const data = {email:this.eleDetail[this.j].email}
-                    this.cntErr.push(data);             
+                    this.cntErr.push(data);
+                    console.log(this.cntErr);             
                     break;
                }
              }  
          })
        }
-       else if(currday > day && currmonth == month && curryear == year){
-        if(currday <= endday && currmonth == endmonth && curryear == endyear){
+       else if(currday > day && currmonth == month && curryear == year || currmonth > month && curryear == year || curryear > year){
+        if(currday <= endday && currmonth == endmonth && curryear == endyear || currmonth < endmonth && curryear == endyear || curryear < endyear){
         this.electionId = this.eleResult[this.i].electionId;
         this.vote.getelectionresult(this.electionId)
        .subscribe((res:any) => {
          this.eleDetail = res;
          for(this.j =0;this.j<this.eleDetail.length;this.j++){
           
-            if(this.eleDetail[this.j].email == "h@gmail.com"){
+            if(this.eleDetail[this.j].email == this.ownerEmail){
                   const data = {email:this.eleDetail[this.j].email}
-                  this.cntErr.push(data);       
+                  this.cntErr.push(data);  
+                  console.log(this.cntErr);
                   break;
              }
            }  
        })
       }
-      else{
-        this.err = "Currently , no election is going on!!!";
-      }
     }
      }
-    });
+    });*/
       
   }
   selection(value){
@@ -203,8 +238,8 @@ eleVoting:any[] = [];
        let endmonth = endDate.substring(3,5);
        let endyear = endDate.substring(6,10);
        
-      if(currday >= day && currmonth == month && curryear == year){
-        if(currday <= endday && currmonth == endmonth && curryear == endyear){
+      if(currday >= day && currmonth == month && curryear == year || currmonth > month && curryear == year || curryear > year){
+        if(currday <= endday && currmonth == endmonth && curryear == endyear || currmonth < endmonth && curryear == endyear || curryear < endyear){
         
                 if(res.positionName == data.pos){
                   this.status2 = true;
@@ -234,7 +269,6 @@ eleVoting:any[] = [];
        let endday = endDate.substring(0,2);
        let endmonth = endDate.substring(3,5);
        let endyear = endDate.substring(6,10);
-
        if(currday == day && currmonth == month && curryear == year){
           this.electionId = this.eleResult[this.i].electionId;
           this.vote.getelectionresult(this.electionId)
@@ -256,8 +290,8 @@ eleVoting:any[] = [];
           this.candName = '';
        }
 
-       else if(currday > day && currmonth == month && curryear == year){
-        if(currday <= endday && currmonth == endmonth && curryear == endyear){
+       else if(currday > day && currmonth == month && curryear == year || currmonth > month && curryear == year || curryear > year){
+        if(currday <= endday && currmonth == endmonth && curryear == endyear || currmonth < endmonth && curryear == endyear || curryear < endyear){
           this.electionId = this.eleResult[this.i].electionId;
           this.vote.getelectionresult(this.electionId)
          .subscribe((res:any) => {
