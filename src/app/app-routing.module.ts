@@ -17,6 +17,7 @@ import { ViewprofileComponent } from './views/viewprofile/viewprofile.component'
 import { ManageprofileComponent } from './views/manageprofile/manageprofile.component';
 import { UserAuthService } from './services/user-auth.service';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
+import { FundsComponent } from './views/funds/funds.component';
 
 const routes: Routes = [
   //home and login
@@ -35,6 +36,10 @@ const routes: Routes = [
   },
   {
     path:'mycomplaint',component:MycomplaintComponent,canActivate:[UserAuthService]
+  },
+  //fund
+  {
+    path:'fund/:id',component:FundsComponent,canActivate:[UserAuthService]
   },
   //election routes
   {

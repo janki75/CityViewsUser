@@ -40,6 +40,7 @@ import { ShowmaintenancedetailComponent } from './views/showmaintenancedetail/sh
 import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/showunpaidmaintenance.component';
 import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
 import {MatCardModule} from '@angular/material/card';
+import { FundsComponent } from './views/funds/funds.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import {MatCardModule} from '@angular/material/card';
     ShowmaintenancedetailComponent,
     ShowunpaidmaintenanceComponent,
     PaidunpaidmaintenanceComponent,
+    FundsComponent,
 
   ],
   imports: [

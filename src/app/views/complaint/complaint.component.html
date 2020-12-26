@@ -4,7 +4,7 @@
 		<div class="container">
 <div class="comment-grid-top"><br>
 
-    <h3 style=" margin-top: -130px;">Complaints</h3>
+    <h3 style=" margin-top: -180px;">Complaints</h3>
 
 <div style="float: right;margin-top: -80px;margin-right: 350px">
   <a (click)="onclickmycomplaints()" style="cursor: pointer" class="more">My Complaints</a>
@@ -56,9 +56,9 @@
                 <li><span class="left-at">{{errmsg}}</span></li>
             </ul>
           </div>
-        </div>  
+        </div>
 
-        
+
     <div *ngFor="let item of arrcomplaint" class="comments-top-top">
         <div  class="top-comment-left">
             <a href="#"><img class="img-responsive" src="../../../assets/images/icon1.png" alt=""></a>
@@ -76,24 +76,24 @@
 
 
               </li><br>
-                <li *ngIf="item.status==0 || item.status==1">               
+                <li *ngIf="item.status==0 || item.status==1">
                     <a class="reply"><mat-icon style="cursor: pointer"  (click)="onclickupvote(item)">thumb_up</mat-icon>
                     </a>
                     {{item.upVote}}
                   </li>
-                  <li *ngIf="item.status==2 || item.status==3">                 
+                  <li *ngIf="item.status==2 || item.status==3">
                      <a class="reply"><mat-icon style="cursor: pointer"  (click)="ondisableclick()">thumb_up</mat-icon>
                      </a>
                      {{item.upVote}}
                     </li>
-                  
+
 
                 <li *ngIf="item.status==0 || item.status==1">
                   <a class="reply"><mat-icon style="cursor: pointer" (click)="onclickdownvote(item)">thumb_down</mat-icon>
                   </a>{{item.downVote}}
                 </li>
 
-                
+
                     <li  *ngIf="item.status==2 || item.status==3">
                       <a class="reply"><mat-icon style="cursor: pointer" (click)="ondisabledownvote()">thumb_down</mat-icon>
                       </a>{{item.downVote}}

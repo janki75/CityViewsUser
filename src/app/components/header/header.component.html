@@ -16,11 +16,28 @@
 						</a>
 					</div>
 					<div class="banner-top-grids banner-top-right">
-						<p>							
+						<!-- <p>
 								<button (click)="onlogout()" type="button" class="btn btn-default btn-sm">
 									  <span class="glyphicon glyphicon-log-out"></span> Log out
 									</button>
-								  </p>
+                  </p> -->
+                  <div  style="margin-top: 20px;margin-left: 100px;" class="dropdown">
+                    <button
+                      id="dropdownMenu1"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                      mat-icon-button
+                      style="color: white;"
+                    >
+                      <mat-icon>menu</mat-icon>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <li><a routerLink="/viewprofile">My Profile</a></li>
+                      <li><a (click)="onchange()">Change Password</a></li>
+                     <li (click)="onlogout()" routerLinkActive="active" ><a href="/">Logout</a></li>
+                    </ul>
+                  </div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -72,6 +89,14 @@
 									</a>
               </li>
               <li>
+								<a (click)="onfund()" style="cursor: pointer;" onclick="$('#section-4').animatescroll();">
+									<span class="icon">
+										<i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+									</span>
+									<span>Funds</span>
+									</a>
+              </li>
+              <li>
 								<a routerLink="/myflat" onclick="$('#section-4').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
@@ -80,15 +105,15 @@
 									</a>
 
 							</li>
-							<li>
+							<!-- <li>
 								<a routerLink="/viewprofile" onclick="$('#section-5').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-user glyphicon glyphicon-user"></i>
 									</span>
 									<span>My Profile</span>
 								</a>
-							</li>
-							
+							</li> -->
+
 						</ul>
 					</nav>
 					<!-- script-for-menu -->

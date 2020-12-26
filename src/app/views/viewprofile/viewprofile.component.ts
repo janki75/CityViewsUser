@@ -41,7 +41,7 @@ export class ViewprofileComponent implements OnInit {
         )
     //   }
     // )
-    
+
   }
 
   manageprofile(){
@@ -51,6 +51,7 @@ export class ViewprofileComponent implements OnInit {
 
   changepass(){
     console.log(this.ownerId);
+
     this._route.navigate(["viewprofile/changepassword",this.ownerId]);
   }
 

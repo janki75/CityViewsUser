@@ -13,5 +13,13 @@
   margin-top: -40px;
 }
 
+.dropdown ul li a:hover{
+  color: black;
+  background-color: #1ABC9C;
+  }
+  .dropdown-menu li a
+  {
+      color: black;
 
+  }
 
