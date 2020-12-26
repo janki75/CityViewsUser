@@ -68,9 +68,7 @@ export class VotingService {
   }
 
   getVotingDetails(data){
-    let body=JSON.stringify(data);
-    let head1=new HttpHeaders().set('Content-Type','application/json');
-
-    return this._http.get(this.electionVote_url+data,{headers:head1});    
+    
+    return this._http.get(this.electionVote_url+data);    
   }
 }

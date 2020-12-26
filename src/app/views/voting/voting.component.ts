@@ -20,6 +20,7 @@ winner:string="";
 j:number=1;
 eleDetail:any[]=[];
 eleResult:any[]=[];
+eleResult1:any[]=[];
 electionId:number[]=[];
 eleId:number;
 status2:any=false;
@@ -32,6 +33,7 @@ electionResults:any[] = [];
 ownerResults:any[] = []; 
 m:number=0;
 err:any="";
+eleVoting:any[] = [];
   step = 0;
 
   setStep(index: number) {
@@ -49,7 +51,7 @@ err:any="";
 
   ngOnInit() {
     
-    this.ownerEmail = "h@gmail.com";
+    this.ownerEmail=localStorage.getItem('ownerId');
     this.owner.getOwnerIdByEmail(this.ownerEmail)
     .subscribe((res:any) => {
       this.ownerId = res.id;
@@ -180,8 +182,39 @@ err:any="";
     }*/
 
     this.vote.getVotingDetails(this.ownerId)
-    .subscribe((res) => {
-      console.log(res);
+    .subscribe((res:any) => {
+      this.eleVoting = res;
+      for(this.i = 0 ;this.i<this.eleVoting.length;this.i++){
+        this.vote.getelectionresultbyid(this.eleVoting[this.i].electionResultId)
+        .subscribe((res:any) => {
+          
+      let date = new Date();
+      let currday = date.getDate();
+      let currmonth = date.getMonth()+1;
+      let curryear = date.getFullYear();
+        
+       let eleDate = res.electionDate;
+       let day = eleDate.substring(0,2);
+       let month = eleDate.substring(3,5);
+       let year = eleDate.substring(6,10);
+
+       let endDate = res.electionEndDate;
+       let endday = endDate.substring(0,2);
+       let endmonth = endDate.substring(3,5);
+       let endyear = endDate.substring(6,10);
+       
+      if(currday >= day && currmonth == month && curryear == year){
+        if(currday <= endday && currmonth == endmonth && curryear == endyear){
+        
+                if(res.positionName == data.pos){
+                  this.status2 = true;
+                  
+              this.candName = res.ownerName;
+             }
+        }
+     }
+        })
+      }
     })
 
     this.vote.getallelectionresult()
