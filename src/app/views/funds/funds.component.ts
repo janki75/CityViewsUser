@@ -16,6 +16,21 @@ i:number;
   ngOnInit() {
     var oid=parseInt(this.ownerid);
     console.log(oid);
+    this.fundser.getfundbyid(oid).subscribe(
+      (data:any)=>{
+        for(this.i=0;this.i<data.length;this.i++)
+        {
+          var todayyear=new Date().getFullYear().toString();
+      var year=data[this.i].date.toString();
+      var subyear=year.substring(6,12);
+      //console.log(todayyear);
+     if(todayyear==subyear)
+     {
+          this.fundarr.push(data[this.i]);
+     }
+        }
+      }
+    );
 
 }
 }
