@@ -1,0 +1,37 @@
+<app-header></app-header>
+<!-- //banner -->
+	<!-- welcome -->
+	<div class="welcome">
+		<div class="container">
+			<div class="title" style=" margin-top: -200px;">
+				<h3 style="font-size: 35px">Vacant Flats !</h3>
+
+			</div>
+			<div class="w3ls-row alert">
+				<div class="col-md-6 welcome-left">
+					<img src="../../../assets/images/a.jpg" class="img-responsive" alt=""/>
+				</div>
+				<div class="about">
+				<div style="border:none; background-color:white;height: 415px;margin-top: -80px" class="col-md-6 welcome-right">
+          <h4 style="margin-left: 20%"> Click To Vacant Flat Details </h4>
+          <br><br>
+					<!-- <div class="about-agile-row"> -->
+						<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+						  <ul id="myTab" class=" nav-tabs" role="tablist">
+							<li (click)="onclick(item.flatId)" style="margin-left:20%" *ngFor="let item of arrflat" role="presentation">
+					<a style="width: 230%;background-color: orange;" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+						{{item.flatNo}}</a>
+					</li>
+							<br><br><br>
+							<!-- <a routerLink="" class="more">See Flat Detail</a> -->
+						  </ul>
+						  </div>
+						</div>
+
+			</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+    
+    <app-footer></app-footer>

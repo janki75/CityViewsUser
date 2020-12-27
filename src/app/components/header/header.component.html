@@ -33,7 +33,8 @@
                       <mat-icon>menu</mat-icon>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a routerLink="/viewprofile">My Profile</a></li>
+					  <li><a routerLink="/viewprofile">My Profile</a></li>
+					  <li><a routerLink="/myflat">My Flat</a></li>
                       <li><a (click)="onchange()">Change Password</a></li>
                      <li (click)="onlogout()" routerLinkActive="active" ><a href="/">Logout</a></li>
                     </ul>
@@ -97,11 +98,11 @@
 									</a>
               </li>
               <li>
-								<a routerLink="/myflat" onclick="$('#section-4').animatescroll();">
+								<a routerLink="/vacantflat" onclick="$('#section-4').animatescroll();">
 									<span class="icon">
 										<i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
 									</span>
-									<span>My flat</span>
+									<span>Vacant flat</span>
 									</a>
 
 							</li>

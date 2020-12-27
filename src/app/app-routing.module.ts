@@ -18,6 +18,8 @@ import { ManageprofileComponent } from './views/manageprofile/manageprofile.comp
 import { UserAuthService } from './services/user-auth.service';
 import { ForgetpasswordComponent } from './views/forgetpassword/forgetpassword.component';
 import { FundsComponent } from './views/funds/funds.component';
+import { VacantflatComponent } from './views/vacantflat/vacantflat.component';
+import { VacantflatdetailComponent } from './views/vacantflatdetail/vacantflatdetail.component';
 
 const routes: Routes = [
   //home and login
@@ -56,6 +58,16 @@ const routes: Routes = [
   {
     path:'flatdetail/:id',
     component:FlatdetailComponent,
+    canActivate:[UserAuthService]
+  },
+  {
+    path:'vacantflat',
+    component:VacantflatComponent,
+    canActivate:[UserAuthService]
+  },
+  {
+    path:'vacantflatdetail/:id',
+    component:VacantflatdetailComponent,
     canActivate:[UserAuthService]
   },
   //profile

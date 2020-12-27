@@ -41,6 +41,8 @@ import { ShowunpaidmaintenanceComponent } from './views/showunpaidmaintenance/sh
 import { PaidunpaidmaintenanceComponent } from './views/paidunpaidmaintenance/paidunpaidmaintenance.component';
 import {MatCardModule} from '@angular/material/card';
 import { FundsComponent } from './views/funds/funds.component';
+import { VacantflatComponent } from './views/vacantflat/vacantflat.component';
+import { VacantflatdetailComponent } from './views/vacantflatdetail/vacantflatdetail.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { FundsComponent } from './views/funds/funds.component';
     ShowunpaidmaintenanceComponent,
     PaidunpaidmaintenanceComponent,
     FundsComponent,
+    VacantflatComponent,
+    VacantflatdetailComponent,
 
   ],
   imports: [
