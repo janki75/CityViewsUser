@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FundService {
-fund_url:string="http://localhost:8081/adminportal/funds/fetch/"
+fund_url:string="http://localhost:8081/adminportal/funds/fetchByOwner/"
   constructor(private http:HttpClient) { }
   getfundbyid(id:number)
   {
