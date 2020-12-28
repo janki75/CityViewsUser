@@ -10,6 +10,7 @@ import { FundService } from 'src/app/services/fund.service';
 export class FundsComponent implements OnInit {
 ownerid:string=localStorage.getItem('Id');
 fundarr:fund_class[]=[];
+msg:string="";
 i:number;
   constructor(private fundser:FundService) { }
 
@@ -20,6 +21,8 @@ i:number;
       (data:any)=>{
         for(this.i=0;this.i<data.length;this.i++)
         {
+
+
           var todayyear=new Date().getFullYear().toString();
       var year=data[this.i].date.toString();
       var subyear=year.substring(6,12);
@@ -27,9 +30,21 @@ i:number;
      if(todayyear==subyear)
      {
           this.fundarr.push(data[this.i]);
+
+
      }
         }
+        if(this.fundarr.length<=0)
+          {
+            this.msg="No Records!";
+            console.log(this.msg);
+          }
+
       }
+
+
+
+
     );
 
 }
