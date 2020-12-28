@@ -72,7 +72,42 @@ export class ElectionComponent implements OnInit {
           let eMonth =data[this.i].endDate.substring(3,5);
           let eYear = data[this.i].endDate.substring(6,10);
           //voteflag
-          if(sYear==this.year && sMonth>=month)
+          if(eYear>this.year)
+          { 
+            if(sYear<this.year)
+            {
+              this.voteflag=true;
+            }
+            else if(sYear>this.year)
+            {
+              this.voteflag=false;
+            }
+            else
+            {
+              if(sMonth<month)
+              {
+                this.voteflag=false;
+              }
+              else if(sMonth>month)
+              {
+                this.voteflag=false;
+              }
+              else
+              {
+                if(sDate>day)
+                {
+                  this.voteflag=false;
+                }
+                else 
+                {
+                  this.voteflag=true;
+                }
+                
+              }
+            }
+            
+          }
+          else if(sYear==this.year && sMonth>=month)
           {
             if(sDate>day)
             {
@@ -90,10 +125,7 @@ export class ElectionComponent implements OnInit {
               }
             }
           }
-          else if(eYear>this.year)
-          { 
-            this.voteflag=true;
-          }
+          
           else if(this.year==sYear && eYear==this.year)
           {
             if(eMonth>month)
