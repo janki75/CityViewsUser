@@ -333,4 +333,8 @@ export class ElectionComponent implements OnInit {
 
   }
 
+  redirect(){
+    this.route.navigate(['/voting']);
+  }
+
 }

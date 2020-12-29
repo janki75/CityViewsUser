@@ -43,9 +43,17 @@
                             class="example-radio-group"
                             [(ngModel)]="candName">
 
-                            <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)" style="font-size: large; padding: 5%;" [disabled]='status2'>
+                            <ng-container *ngIf="candName != ''">
+                            <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)" style="font-size: large; padding: 5%;" [disabled]='true'>
                               {{ele.ownername  + ' - ' + ele.email}}
                           </mat-radio-button>
+                        </ng-container>
+
+                        <ng-container *ngIf="candName == ''">
+                          <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)" style="font-size: large; padding: 5%;" [disabled]='false'>
+                            {{ele.ownername  + ' - ' + ele.email}}
+                        </mat-radio-button>
+                      </ng-container>
 
                           </mat-radio-group>
                         <p>

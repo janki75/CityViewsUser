@@ -242,13 +242,9 @@ ele:any[]=[];
         if(currday <= endday && currmonth == endmonth && curryear == endyear || currmonth < endmonth && curryear == endyear || curryear < endyear){
         
                 if(res.positionName == data.pos){
-                  this.status2 = true;
-                  
-              this.candName = res.ownerName;
-             }
-             else{
-              this.status2 = false;
-             }
+                  this.status2 = true;          
+                  this.candName = res.ownerName;
+                }
         }
      }
         })
