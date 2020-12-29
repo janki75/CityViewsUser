@@ -57,7 +57,7 @@
 
 
 
- <div class="title" style=" margin-top: -160px;">
+ <div class="title" style=" margin-top: -140px;">
    <h3 style="font-size: 35px">Edit Profile Details</h3>
 
  </div>
@@ -68,6 +68,13 @@
 
    <fieldset>
      <legend><span class="number">*</span>Edit Profile Details From Here!</legend>
+     <label for="name">Name</label>
+     <div class="form-group">
+        <div class="form-line">
+            <input pattern="[a-zA-Z ]*" #n="ngModel" required id="name" name="name" [(ngModel)]="name" type="text" id="name" class="form-control" placeholder="Enter Name">
+        </div>
+        <span *ngIf="n.invalid && n.touched && n.value" style="color:red; font-size:2; text-align:center;"> *Please Enter a Valid Name </span>
+    </div>
      <label for="contactNo">Contact Number</label>
      <div class="form-group">
          <div class="form-line">
@@ -78,24 +85,8 @@
 
      </div>
 
-     <label for="email">Email</label>
-     <div class="form-group">
-         <div class="form-line">
-             <input required email #em="ngModel" name="email" [(ngModel)]="email" type="email" id="email" class="form-control" placeholder="Enter Email">
-         </div>
-         <div [hidden]="em.valid || em.untouched">
-             <div [hidden]="!em.errors?.required"  class="text-danger">
-                   <font size=2>*Email is a mandotory field</font>
-             </div>
-             <div [hidden]="!em?.errors?.email" class="text-danger">
-                 <font size=2>*Please enter a valid email</font>
-             </div>
-         </div>
-         <p style="color: red; font-size: large; text-align: center;">{{ emailreserved }}</p>
-     </div>
 
-
-
+    
    </fieldset>
 
 

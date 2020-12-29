@@ -21,7 +21,10 @@ export class ChangepasswordComponent implements OnInit {
   oldpassword:string;
   newpassword:string;
   renewpassword:string;
-
+  hide:boolean=true;
+  hide1:boolean=true;
+  hide2:boolean=true;
+  
  
     constructor(private _ownservice:OwnerService, private _acroute:ActivatedRoute, private _route : Router) { }
   

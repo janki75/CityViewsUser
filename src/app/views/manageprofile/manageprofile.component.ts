@@ -46,31 +46,31 @@ export class ManageprofileComponent implements OnInit {
         }
       );
 
-      this._ownservice.getallowner().subscribe(
-        (data:owner_class[])=>{
-            this.i=0;
-            console.log(data);
-            for(this.i=0;this.i<data.length;this.i++)
-            {
-              this.allemail.push(data[this.i].email);
-              // console.log(this.alldate);
-            }
-            console.log(this.allemail);
+      // this._ownservice.getallowner().subscribe(
+      //   (data:owner_class[])=>{
+      //       this.i=0;
+      //       console.log(data);
+      //       for(this.i=0;this.i<data.length;this.i++)
+      //       {
+      //         this.allemail.push(data[this.i].email);
+      //         // console.log(this.alldate);
+      //       }
+      //       console.log(this.allemail);
 
-        }
-      )
+      //   }
+      // )
     
     }
 
 
     updateprofile(){
-      for(this.j=0;this.j<this.allemail.length;this.j++){
-        if(this.allemail[this.j]==this.email && this.currentemail!=this.email){
-          this.flag=1
-        }
-    }
+    //   for(this.j=0;this.j<this.allemail.length;this.j++){
+    //     if(this.allemail[this.j]==this.email && this.currentemail!=this.email){
+    //       this.flag=1
+    //     }
+    // }
 
-     if(this.flag==0){
+    //  if(this.flag==0){
       console.log(this.ownerId);
       this._ownservice.updateownerdetails(new owner_class(this.ownerId,this.name,this.contactNo,this.email,this.dateOfPurchase,this.active,this.password)).subscribe(
         (data:any)=>{
@@ -79,11 +79,11 @@ export class ManageprofileComponent implements OnInit {
       );
       alert("Profile updated successfully!");
       this._route.navigate(['/viewprofile']);
-    }
-    else{
-      this.emailreserved="Email already registered: Please select some other email";
-      this.flag=0;
-    }
+    // }
+    // else{
+    //   this.emailreserved="Email already registered: Please select some other email";
+    //   this.flag=0;
+    // }
     }
 
 
