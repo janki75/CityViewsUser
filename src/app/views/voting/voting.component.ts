@@ -96,7 +96,7 @@ ele:any[]=[];
       })
 
 
-      /*this.vote.getallelection()
+      this.vote.getallelection()
       .subscribe((res:any) => {
           this.ele = res;
           console.log(this.ele);
@@ -183,7 +183,7 @@ ele:any[]=[];
       }
     }
      }
-    });*/
+    });
       
   }
   selection(value){
@@ -245,6 +245,9 @@ ele:any[]=[];
                   this.status2 = true;
                   
               this.candName = res.ownerName;
+             }
+             else{
+              this.status2 = false;
              }
         }
      }
