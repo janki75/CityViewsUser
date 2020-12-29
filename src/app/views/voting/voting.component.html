@@ -45,13 +45,13 @@
 
                             <ng-container *ngIf="candName != ''">
                             <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)" style="font-size: large; padding: 5%;" [disabled]='true'>
-                              {{ele.ownername  + ' - ' + ele.email}}
+                              {{ele.ownername}}
                           </mat-radio-button>
                         </ng-container>
 
                         <ng-container *ngIf="candName == ''">
                           <mat-radio-button class="example-radio-button" *ngFor="let ele of eleResDetail" [value]="ele.electionResultId" (change)="selection($event.value)" style="font-size: large; padding: 5%;" [disabled]='false'>
-                            {{ele.ownername  + ' - ' + ele.email}}
+                            {{ele.ownername}}
                         </mat-radio-button>
                       </ng-container>
 
